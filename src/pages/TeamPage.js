@@ -7,56 +7,95 @@ import {  Button,
           Grid,
           Jumbotron,
           MenuItem,
+          Image,
           Nav,
           NavDropdown,
           NavItem,
           Navbar, 
           Row } from 'react-bootstrap';
 
+import { __COMPONENT_STYLES__ } from '../global/Styles.js'
 
+import NavHeader from '../components/NavHeader.js'
+import Footer from '../components/Footer.js'
+import BackgroundImage from '../components/BackgroundImage.js'
+import PersonCard from '../components/PersonCard.js'
 
 const dummySentences = ['Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 'Donec hendrerit tempor tellus.', 'Donec pretium posuere tellus.', 'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Nulla posuere.', 'Donec vitae dolor.', 'Nullam tristique diam non turpis.', 'Cras placerat accumsan nulla.', 'Nullam rutrum.', 'Nam vestibulum accumsan nisl.'];
 
 export default class TeamPage extends Component {
   render() {
     return (
-      <div>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">AMRC</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="#">Link</NavItem>
-            <NavItem eventKey={2} href="#">Link</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.4}>Separated link</MenuItem>
-            </NavDropdown>
-          </Nav>
-        </Navbar>
-        <Jumbotron>
-          <h1>Hello, world!</h1>
-          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-          <p><Button bsStyle="primary">Learn more</Button></p>
-        </Jumbotron>
+      <div style={styles.container}>
+        <NavHeader/>
 
-        <Grid>
-          <Row className="show-grid">
-            <Col sm={6} md={3}><code>&lt;{'Col sm={6} md={3}'} /&gt;</code><br />{dummySentences.slice(0, 6).join(' ')}</Col>
-            <Col sm={6} md={3}><code>&lt;{'Col sm={6} md={3}'} /&gt;</code><br />{dummySentences.slice(0, 4).join(' ')}</Col>
-            <Clearfix visibleSmBlock><code>&lt;{'Clearfix visibleSmBlock'} /&gt;</code></Clearfix>
-            <Col sm={6} md={3}><code>&lt;{'Col sm={6} md={3}'} /&gt;</code><br />{dummySentences.slice(0, 6).join(' ')}</Col>
-            <Col sm={6} md={3}><code>&lt;{'Col sm={6} md={3}'} /&gt;</code><br />{dummySentences.slice(0, 2).join(' ')}</Col>
+        <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
+          <BackgroundImage contentStyle={__COMPONENT_STYLES__.jumboContent}>
+            <p style={__COMPONENT_STYLES__.jumboSubtitle}>
+              AMRC
+            </p>
+            <h1 style={__COMPONENT_STYLES__.jumboText}>
+              Team
+            </h1>
+          </BackgroundImage>
+        </Jumbotron>
+        <Grid style={styles.grid}>
+          <Row>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+
+            <PersonCard/>
           </Row>
         </Grid>
 
-        
+        <Jumbotron style={styles.jumbotron2}> 
+          <BackgroundImage contentStyle={__COMPONENT_STYLES__.jumboContent}>
+            <p style={__COMPONENT_STYLES__.jumboSubtitle}>
+              AMRC
+            </p>
+            <h1 style={__COMPONENT_STYLES__.jumboText}>
+              Advisors
+            </h1>
+          </BackgroundImage>
+        </Jumbotron>
+
+        <Grid style={styles.grid}>
+          <Row>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+            <PersonCard/>
+
+            <PersonCard/>
+          </Row>
+        </Grid>
+        <Footer/>
       </div>
     );
+  }
+}
+
+
+
+const styles = {
+  container: {
+    alignItems: 'center',
+  },
+  jumbotron: {
+    height: '60vh'
+  },
+  jumbotron2: {
+    height: 160,
+    padding: 0,
+  },
+  grid: {
+    alignItems: 'center',
+
   }
 }

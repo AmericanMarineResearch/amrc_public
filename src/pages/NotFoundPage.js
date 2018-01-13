@@ -8,7 +8,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import {  Button, 
           Jumbotron,
-          } from 'react-bootstrap'; 
+          } from 'reactstrap'; 
 
 
 export default class NotFoundPage extends Component {
@@ -18,7 +18,7 @@ export default class NotFoundPage extends Component {
         <Jumbotron>
           <h1>404 - Not Found</h1>
           <p>Reource not found</p>
-          <p><Button bsStyle="primary">Back</Button></p>
+          <p><Button bsStyle="primary" href='/'>Back</Button></p>
         </Jumbotron>       
       </div>
     );

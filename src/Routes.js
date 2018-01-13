@@ -11,31 +11,32 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 
 import HomePage from './pages/HomePage.js'
 import NotFoundPage from './pages/NotFoundPage.js'
-
+import TeamPage from './pages/TeamPage.js'
 class Routes extends React.Component {
-	constructor(props) {
-		super(props)
-		autoBind(this)
+  constructor(props) {
+    super(props)
+    autoBind(this)
 
-		this.state = {
-			user: null,
-			error: null
-	    }
-	}
+    this.state = {
+      user: null,
+      error: null
+    }
+  }
 
-	render() {
+  render() {
 
-		return (
-			<Router {...this.props}>
-				<Switch>
-					<Route path="/404" component={NotFoundPage} />
-					<Redirect exact from="/" to='/home' />
-				    <Route path="/home/" 			component={HomePage} />
-					<Redirect from="*" to='/404' />
-				</Switch>
-			</Router>
-		)
-	}
+    return (
+      <Router {...this.props}>
+        <Switch>
+          <Route path="/404" component={NotFoundPage} />
+          <Redirect exact from="/" to='/home' />
+          <Route path="/home/"            component={HomePage} />
+          <Route path="/team/"            component={TeamPage} />
+          <Redirect from="*" to='/404' />
+        </Switch>
+      </Router>
+    )
+  }
 }
 
 
