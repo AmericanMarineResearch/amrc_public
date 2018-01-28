@@ -12,6 +12,13 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import HomePage from './pages/HomePage.js'
 import NotFoundPage from './pages/NotFoundPage.js'
 import TeamPage from './pages/TeamPage.js'
+import AccessDeniedPage from './pages/AccessDeniedPage.js'
+import CareersPage from './pages/CareersPage.js'
+import ContactPage from './pages/ContactPage.js'
+import SponsorPage from './pages/SponsorPage.js'
+import FisheriesPage from './pages/FisheriesPage.js'
+import MissionPage from './pages/MissionPage.js'
+
 class Routes extends React.Component {
   constructor(props) {
     super(props)
@@ -32,6 +39,13 @@ class Routes extends React.Component {
           <Redirect exact from="/" to='/home' />
           <Route path="/home/"            component={HomePage} />
           <Route path="/team/"            component={TeamPage} />
+          <Route path="/research/"            component={AccessDeniedPage} />
+          <Route path="/careers/"            component={CareersPage} />
+          <Route path="/contact/"            component={ContactPage} />
+          <Route path="/sponsor/"            component={SponsorPage} />
+          <Route path="/mission/"            component={MissionPage} />
+          <Route path="/fisheries/"            component={FisheriesPage} />
+
           <Redirect from="*" to='/404' />
         </Switch>
       </Router>

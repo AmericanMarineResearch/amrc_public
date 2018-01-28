@@ -4,7 +4,7 @@
 import React, {Component } from 'react';
 import { Black } from '../global/Colors.js'
 
-const BACKGROUND_IMAGE_URL = 'http://oceana.org/sites/default/files/shutterstock_273670535.jpg'
+const BACKGROUND_IMAGE_URL = 'https://www.scholastic.com/content/dam/teachers/Book%20List/2016-2017/books-about-oceans-book-list-4-3.jpg'
 
 export default class BackgroundImage extends Component {
 

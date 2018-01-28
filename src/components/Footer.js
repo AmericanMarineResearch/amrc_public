@@ -38,7 +38,7 @@ export default class Footer extends Component {
 const styles = {
   jumbotron: {
     marginBottom: -20,
-    marginTop: 10,
+    marginTop: 0,
     padding: 10,
     justifyContent: 'center',
     alignItem: 'center,'
