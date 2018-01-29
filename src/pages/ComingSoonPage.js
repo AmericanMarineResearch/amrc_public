@@ -21,7 +21,7 @@ import BackgroundImage from '../components/BackgroundImage.js'
 import { White } from '../global/Colors.js'
 const dummySentences = ['Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 'Donec hendrerit tempor tellus.', 'Donec pretium posuere tellus.', 'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Nulla posuere.', 'Donec vitae dolor.', 'Nullam tristique diam non turpis.', 'Cras placerat accumsan nulla.', 'Nullam rutrum.', 'Nam vestibulum accumsan nisl.'];
 
-export default class NotFoundPage extends Component {
+export default class ComingSoonPage extends Component {
   render() {
     return (
       <div>
@@ -32,13 +32,13 @@ export default class NotFoundPage extends Component {
             
             
             <img src="/images/amrc-01.png" style={styles.logo} />
+            <h1 style={styles.text}>
+              Under Maintenance
+            </h1>
            
             <div style={styles.hline}/>
-            <p style={styles.title}>
-              Innovations for Healthy Oceans
-            </p>
             <p style={styles.text}>
-              At American Marine Research Company, we're revolutionizing the way we protect our oceans using interdisciplinary applications of technology and engineering.
+              Thank you for visiting American Marine Research Company. From January 29 to February 10 we will be overhauling our website. We thank you for your patience during this time.
             </p>
             <div style={styles.hline}/>
             
@@ -70,12 +70,7 @@ const styles = {
   },
   text: {
     color: White(0.8),
-    fontSize: 14,
-  },
-  title: {
-    fontSize: 30,
-    color: White(0.8),
-    marginBottom: 10,
+    marginBottom: -5,
   },
   logo: {
     height: '40vh',

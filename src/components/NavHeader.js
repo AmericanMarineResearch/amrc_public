@@ -21,16 +21,19 @@ import { PrimaryColor, White } from '../global/Colors.js'
 export default class NavHeader extends Component {
   render() {
     return (
-      <div >
+      <div>
         <Navbar style={styles.container} staticTop >
           <Navbar.Header>
             <Navbar.Brand>
-              <a style={styles.text} href="home">American Marine Research Company</a>
+
+              <a style={styles.text} href="home">
+                <img src="/images/amrc_secondary-01.png" style={styles.logo} />
+              </a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight style={styles.nav}>
 
-            <NavDropdown class="pull-right" style={styles.dropdown} eventKey={3} title="About" id="nav-dropdown">
+            <NavDropdown class="dropdown-menu pull-right" style={styles.dropdown} eventKey={3} title="About">
               <MenuItem style={styles.menuitem} href="mission" eventKey={3.1}>Mission</MenuItem>
               <MenuItem style={styles.menuitem} href="team" eventKey={3.2}>Team</MenuItem>
               <MenuItem style={styles.menuitem} href="sponsors" eventKey={3.3}>Sponsors</MenuItem>
@@ -56,12 +59,16 @@ const styles = {
   text: {
     color: White(0.8),
   },
+  logo: {
+    height: 60,
+  },
   menuitem: {
     fontColor: White(0.8),
   },
   nav: {  
     paddingLeft: 0,
     paddingRight: 0,
+    marginTop: 20,
   },
   dropdown: {
     backgroundColor: White(0),
@@ -71,5 +78,7 @@ const styles = {
     borderWidth: 0,
     paddingLeft: 0,
     paddingRight: 0,
+    display: 'absolute',
+    justifyContent: 'space-between'
   }
 }

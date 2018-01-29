@@ -18,6 +18,9 @@ import ContactPage from './pages/ContactPage.js'
 import SponsorPage from './pages/SponsorPage.js'
 import FisheriesPage from './pages/FisheriesPage.js'
 import MissionPage from './pages/MissionPage.js'
+import ComingSoonPage from './pages/ComingSoonPage.js'
+
+let __DEV__ = true
 
 class Routes extends React.Component {
   constructor(props) {
@@ -30,7 +33,31 @@ class Routes extends React.Component {
     }
   }
 
+
   render() {
+
+    if (__DEV__) {
+      return (
+        <Router {...this.props}>
+          <Switch>
+            <Route path="/404" component={NotFoundPage} />
+            <Redirect exact from="/" to='/home' />
+            <Route path="/home/"            component={HomePage} />
+            <Route path="/team/"            component={ComingSoonPage} />
+            <Route path="/research/"            component={ComingSoonPage} />
+            <Route path="/careers/"            component={ComingSoonPage} />
+            <Route path="/contact/"            component={ContactPage} />
+            <Route path="/sponsor/"            component={ComingSoonPage} />
+            <Route path="/mission/"            component={ComingSoonPage} />
+            <Route path="/fisheries/"            component={ComingSoonPage} />
+
+            <Redirect from="*" to='/404' />
+          </Switch>
+        </Router>
+
+
+      )
+    }
 
     return (
       <Router {...this.props}>

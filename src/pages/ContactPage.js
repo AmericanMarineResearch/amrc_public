@@ -34,7 +34,7 @@ export default class ContactPage extends Component {
         <NavHeader/>
 
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
-          <BackgroundImage contentStyle={__COMPONENT_STYLES__.jumboContent}>
+          <BackgroundImage contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.bodyTop}}>
             <p style={__COMPONENT_STYLES__.jumboSubtitle}>
               Talk With Us
             </p>
@@ -43,7 +43,7 @@ export default class ContactPage extends Component {
             </h1>
           </BackgroundImage>
         </Jumbotron>
-        <div style={styles.center}>
+        <div style={{...styles.center, ...styles.body}}>
           <h3 style={styles.line}>
             General Inquiry
           </h3>
@@ -83,6 +83,13 @@ const styles = {
   },
   jumbotron: {
     height: '60vh'
+  },
+  bodyTop: {
+    padding: '2vw'
+  },
+  body: {
+    paddingLeft: '10vw',
+    paddingRight: '10vw',
   },
   center: {
     flex: 1,

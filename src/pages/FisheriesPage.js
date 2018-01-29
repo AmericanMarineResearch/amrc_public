@@ -80,7 +80,7 @@ export default class FisheriesPage extends Component {
       <div style={styles.container}>
         <NavHeader/>
 
-        <BackgroundImage contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.sectionContainer}}>
+        <BackgroundImage contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.sectionContainer, ...{paddingTop: 40}}}>
           <p style={__COMPONENT_STYLES__.jumboSubtitle}>
             Reproductive Rates of Selected Species
           </p>
