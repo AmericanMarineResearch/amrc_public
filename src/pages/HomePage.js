@@ -38,7 +38,7 @@ export default class NotFoundPage extends Component {
               Innovations for Healthy Oceans
             </p>
             <p style={styles.text}>
-              At American Marine Research Company, we're revolutionizing the way we protect our oceans using interdisciplinary applications of technology and engineering.
+              At American Marine Research Company, we're revolutionizing the way we protect our oceans using interdisciplinary applications of data, technology and engineering.
             </p>
             <div style={styles.hline}/>
             
