@@ -12,3 +12,15 @@ export function Black(opacity) {
 export function White(opacity) {
 	return 'rgba(255, 255, 255, ' + String(opacity)  + ')'
 }
+
+export function lightGreen(opacity) {
+	return 'rgba(63, 151, 142, ' + String(opacity)  + ')'
+}
+
+export function lightBlue(opacity) {
+   	return 'rgba(20, 148, 201, ' + String(opacity)  + ')'
+}	
+
+export function darkBlue(opacity) {
+	return 'rgba(28, 51, 92, ' + String(opacity)  + ')'
+}
