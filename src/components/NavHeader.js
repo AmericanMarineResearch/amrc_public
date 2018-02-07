@@ -41,7 +41,8 @@ export default class NavHeader extends Component {
             <NavDropdown style={styles.dropdown} eventKey={4} title="Research" id="nav-dropdown">
               <MenuItem style={styles.menuitem} href="blog" eventKey={4.1}>Blog</MenuItem>
               
-              <MenuItem style={styles.menuitem} href="marinerobotics" eventKey={4.2}>Marine Robotics</MenuItem>
+              <MenuItem style={styles.menuitem} href="data" eventKey={4.2}>Data</MenuItem>
+              <MenuItem style={styles.menuitem} href="ai" eventKey={4.3}>AI and Computer Vision</MenuItem>
               <MenuItem style={styles.menuitem} href="fisheries" eventKey={4.4}>Fisheries</MenuItem>
             </NavDropdown>
 
