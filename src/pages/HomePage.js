@@ -154,7 +154,6 @@ export default class NotFoundPage extends Component {
 
         <div style={styles.blueFooter}>
           <p style={styles.textBlack}>
-            Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each drone alone could result in ~$2.5 million of available biomass.
           </p>
         </div>
 
