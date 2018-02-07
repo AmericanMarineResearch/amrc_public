@@ -99,13 +99,13 @@ export default class NotFoundPage extends Component {
             </h1>
             
             <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-              AMRC was founded out of the conviction that marine robotics could offer a promising approach for controlling invasive species in an economically sustainable way. 
+              AMRC was founded out of the conviction that marine data and artificial intelligence could offer promising insights for controlling invasive species in an economically sustainable way. 
             </p>
             <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-              Our mission is to create an agile and versatile underwater drone that can be used to capture lionfish populations at scale.
+              Our mission is to data-driven methods for lionfish control, using sophistiacted technologies from a wide range of domains to advance invasive species control research.
             </p>
             <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-              It was borne out of the observation that no other scalable method of lionfish capture currently exists that is capable of more than lionfish control – in other words, no method exists today that could solve the lionfish invasion once and for all.
+              It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
             </p>
           </div>
           <div 
