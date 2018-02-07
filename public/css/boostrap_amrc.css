@@ -12,8 +12,30 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/*
+  TODO: PUT IN AVENIR AS FONT;
+*/
+/*@font-face {
+    font-family: "Avenir";
+    src:url("/public/fonts/Open Sans.ttc");
+}
+
+Avenir{
+    font-family:"Vanir";
+}
+
+@font-face {
+    font-family: "OROSKO";
+    src:url("/public/fonts/OROSKO.ttc");
+}
+
+OROSKO{
+    font-family:"OROSKO";
+}
+*/
 html {
-  font-family: sans-serif;
+  font-family: Open Sans sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   max-width: 100%;

@@ -82,7 +82,7 @@ export default class NotFoundPage extends Component {
           <br/>
           <br/>
 
-          <div style={styles.row}>
+          <div style={{...styles.row, ...{ paddingLeft: '20vw', paddingRight: '20vw'}}}>
             <img src="/images/recreationalfishing-01.png" style={styles.logo} />
             <img src="/images/salesgauge-01.png" style={styles.logo} />
           </div>
@@ -120,7 +120,7 @@ export default class NotFoundPage extends Component {
           </div>
         </div>
 
-        <div style={{...styles.section2, ...{justifyContent: 'flex-end'}}}>
+        <div style={{...styles.section2, ...{justifyContent: 'center', height: '100vh'}}}>
           <BackgroundImage 
             background={'url(/images/waves-01.png)'}
             backgroundColor={darkBlue(0.6)}
@@ -130,19 +130,21 @@ export default class NotFoundPage extends Component {
               ...styles.row, 
               ...{
                   justifyContent: 'space-around', 
-                  justifyContent: 'flex-end',
+                  alignItems: 'flex-end',
                   height: '80vh', 
                 }}}>
 
               <div style={styles.smallCol}>
+                <div style={{...styles.hcap, ...styles.hcapGreen}}/>
                 <p style={styles.text}>
-                  The potential economic impact of AMRC ROVs are massive. A rough calculations demonstrates that a single AMRC ROV catching lionfish at a rate of 30 fish per hour, operating a third of the year (120 days) for 10 hours, can capture 36,000 lionfish each year.
+                  The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
                 </p>
               </div>
 
               <div style={styles.smallCol}>
+                <div style={{...styles.hcap, ...styles.hcapBlue}}/>
                 <p style={styles.text}>
-                  Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each drone alone could result in ~$2.5 million of available biomass.
+                  Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
                 </p>
               </div>
             </div>
@@ -150,7 +152,40 @@ export default class NotFoundPage extends Component {
           </BackgroundImage>
         </div>
 
-        <div style={styles.blueFooter}/>
+        <div style={styles.blueFooter}>
+          <p style={styles.textBlack}>
+            Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each drone alone could result in ~$2.5 million of available biomass.
+          </p>
+        </div>
+
+        <div style={styles.section4}>
+          <img src="/images/handshake.png" style={styles.handshake} />
+          <h2>
+            Our Commitment
+          </h2>
+          <div style={{
+              ...styles.row, 
+              ...{
+                  justifyContent: 'space-around', 
+                  alignItems: 'flex-end',
+                  height: '80vh', 
+                }}}>
+            <div style={styles.smallCol}>
+              <p style={styles.textBlack}>
+                Some Text Here
+              </p>
+            </div>
+
+            <div style={{backgroundColor: Black(1), display: 'flex', flex: 1, width: 1}}/>
+
+            <div style={styles.smallCol}>
+              <p style={styles.textBlack}>
+                More text here
+              </p>
+            </div>
+          </div>
+        </div>
+
 
         <Footer/>
       </div>
@@ -176,8 +211,13 @@ const styles = {
   },
   blueFooter: {
     backgroundColor: lightBlue(1),
-    flex: 1,
-    height: 120
+    flex: 0,
+    height: 120,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: '15vw',
+    paddingRight: '15vw',
   },
   section2: {
     backgroundColor: darkBlue(1),
@@ -198,11 +238,27 @@ const styles = {
     width: '100vw',
     paddingTop: '9vh',
     paddingBottom: '9vh'
+  },  
+  section4: {
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    width: '100vw',
+    paddingTop: '8vh',
+    paddingBottom: '8vh',
+    paddingLeft: '20vw',
+    paddingRight: '20vw'
   },
   text: {
     color: White(0.8),
     fontSize: 14,
     marginTop: 30,
+  },
+  textBlack: {
+    color: Black(0.8),
+    fontSize: 14,
   },
   textLighter: {
     color: White(0.4),
@@ -220,6 +276,9 @@ const styles = {
   logo: {
     height: '40vh',
   },
+  handshake: {
+    height: 40,
+  },
   hline: {
     backgroundColor: White(0.8),
     width: '30vw',
@@ -228,8 +287,8 @@ const styles = {
   },
   hcap: {
     marginTop: 5,
-    width: 80,
-    height: 10,
+    width: 88,
+    height: 8,
     flex: 0,
     display: 'flex',
     backgroundColor: White(1),
@@ -253,8 +312,7 @@ const styles = {
     flexDirection: 'column',
     flex: 1,
     width: '30vw',
-    marginLeft: '3vw',
-    marginRight: '3vw',
+    margin: '3vw',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
@@ -264,10 +322,9 @@ const styles = {
   },
   row: {
     display: 'flex',
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingLeft: '20vw',
-    paddingRight: '20vw'
   },
   body: {
     paddingLeft: '20vw',
@@ -275,7 +332,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  body: {
+  body2: {
     justifyContent: 'center',
     alignItems: 'center',
   }
