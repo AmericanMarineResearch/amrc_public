@@ -19,6 +19,7 @@ import SponsorPage from './pages/SponsorPage.js'
 import FisheriesPage from './pages/FisheriesPage.js'
 import MissionPage from './pages/MissionPage.js'
 import ComingSoonPage from './pages/ComingSoonPage.js'
+//import TeamPage from ''
 
 let __DEV__ = true
 
