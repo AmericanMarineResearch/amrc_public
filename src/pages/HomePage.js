@@ -24,7 +24,7 @@ const dummySentences = ['Lorem ipsum dolor sit amet, consectetuer adipiscing eli
 
 var text = "The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."
 
-export default class NotFoundPage extends Component {
+export default class HomePage extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -153,7 +153,7 @@ export default class NotFoundPage extends Component {
         </div>
 
         <div style={styles.blueFooter}>
-          <p style={styles.textBlack}>
+          <p style={{...styles.text, ...{fontWeight: 500}}}>
             We are currently focusing our research in Escambia County, Okaloosa County and Santa Rosa County, with the vision of tackling lionfish infestations plaguing the entire Gulf Coast and beyond.
           </p>
         </div>
@@ -239,7 +239,7 @@ const styles = {
   blueFooter: {
     backgroundColor: lightBlue(1),
     flex: 0,
-    height: 120,
+    height: 140,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -295,11 +295,13 @@ const styles = {
   title: {
     fontSize: 30,
     color: White(1),
+    letterSpacing: '2px',
     fontWeight: 600,
     marginBottom: 10,
   },
   subtitle: {
     fontSize: 20,
+    letterSpacing: '1.2px',
     fontWeight: 600,
     color: lightBlue(1)
   },

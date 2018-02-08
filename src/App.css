@@ -275,6 +275,15 @@ position: fixed;
   animation: panning 400s infinite linear;
 }
 
+.still {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: black url(http://unsplash.it/1900/1900/?random&blur);
+  background-size: 100%;
+}
+
+
 .pan2 {
   position: relative;
   height: 100%;

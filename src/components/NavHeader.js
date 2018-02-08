@@ -31,7 +31,7 @@ export default class NavHeader extends Component {
             <Navbar.Brand>
 
               <a style={styles.text} href="home">
-                <img src="/images/amrc_secondary-01.png" style={styles.logo} />
+                <img src="/images/amrc_white-01.png" style={styles.logo} />
               </a>
             </Navbar.Brand>
           </Navbar.Header>
