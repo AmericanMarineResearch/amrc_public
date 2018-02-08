@@ -95,7 +95,7 @@ export default class NotFoundPage extends Component {
             <div style={styles.hcap}/>
 
             <h1 style={{...styles.title, ...styles.justifyLeft}}>
-              {"The Lionfish Problem".toUpperCase()}
+              {"Working Smarter".toUpperCase()}
             </h1>
             
             <p style={{...styles.textLighter, ...styles.justifyLeft}}>
@@ -154,32 +154,53 @@ export default class NotFoundPage extends Component {
 
         <div style={styles.blueFooter}>
           <p style={styles.textBlack}>
+            We are currently focusing our research in Escambia County, Okaloosa County and Santa Rosa County, with the vision of tackling lionfish infestations plaguing the entire Gulf Coast and beyond.
           </p>
         </div>
 
         <div style={styles.section4}>
           <img src="/images/handshake.png" style={styles.handshake} />
-          <h2>
-            Our Commitment
+          <h2 style={{...styles.textBlack, ...styles.title, ...{color: lightBlue(1)}}}>
+            {"Our Commitment".toUpperCase()}
           </h2>
-          <div style={{
-              ...styles.row, 
+          <br/>
+          <div style={{ 
               ...{
-                  justifyContent: 'space-around', 
-                  alignItems: 'flex-end',
-                  height: '80vh', 
+                  justifyContent: 'center', 
+                  alignItems: 'stretch',
+                  flexDirection: 'row',
+                  flex: 1,
+                  display: 'flex',
                 }}}>
-            <div style={styles.smallCol}>
-              <p style={styles.textBlack}>
-                Some Text Here
+            <div style={styles.medCol}>
+              <p style={{...styles.subtitle, ...styles.justifyLeft}}>
+                {"Environmental Responsibility".toUpperCase()}
+              </p>
+              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                To ensure the responsible use of our technology, for purposes that best protect and preserve the long-term health of the natural environment.
+              </p>
+              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                To partner with non-profits and the academic community in tackling the major environmental problems plaguing the area.
+              </p>
+              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                To remain transparent with our actions and accountable to the local community.
               </p>
             </div>
 
-            <div style={{backgroundColor: Black(1), display: 'flex', flex: 1, width: 1}}/>
+            <div style={styles.vline}/>
 
-            <div style={styles.smallCol}>
-              <p style={styles.textBlack}>
-                More text here
+            <div style={{...styles.medCol, ...{borderColor: Black(0.6), borderLeftWidth: 1}}}>
+              <p style={{...styles.subtitle, ...styles.justifyLeft}}>
+                {"Economic development".toUpperCase()}
+              </p>
+              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                To employ local Floridians and providing them with training and experience to develop into highly skilled talent, as demonstrated by the fact that half our team consists of proud Pensacola locals.
+              </p>
+              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                To invest in high school and university students by providing educational opportunities to learn about and work in marine biology, data science, and business, as well as mentorship to budding entrepreneurs.
+              </p>
+              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                To work with local fishing and charter boat communities in improving the quality of fish stocks.
               </p>
             </div>
           </div>
@@ -207,6 +228,13 @@ const styles = {
   jumbotron: {
     height: '120vh',
     marginBottom: 0,
+  },
+  vline: {
+    flex: 1,
+    display: 'flex',
+    marginTop: '3vw',
+    maxWidth: 1,
+    backgroundColor: Black(0.6)
   },
   blueFooter: {
     backgroundColor: lightBlue(1),
@@ -247,8 +275,8 @@ const styles = {
     width: '100vw',
     paddingTop: '8vh',
     paddingBottom: '8vh',
-    paddingLeft: '20vw',
-    paddingRight: '20vw'
+    paddingLeft: '15vw',
+    paddingRight: '15vw'
   },
   text: {
     color: White(0.8),
@@ -256,7 +284,7 @@ const styles = {
     marginTop: 30,
   },
   textBlack: {
-    color: Black(0.8),
+    color: Black(0.6),
     fontSize: 14,
   },
   textLighter: {
@@ -267,7 +295,13 @@ const styles = {
   title: {
     fontSize: 30,
     color: White(1),
+    fontWeight: 600,
     marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 20,
+    fontWeight: 600,
+    color: lightBlue(1)
   },
   justifyLeft: {
     textAlign: 'start'
@@ -276,7 +310,7 @@ const styles = {
     height: '40vh',
   },
   handshake: {
-    height: 40,
+    height: 70,
   },
   hline: {
     backgroundColor: White(0.8),
@@ -311,6 +345,13 @@ const styles = {
     flexDirection: 'column',
     flex: 1,
     width: '30vw',
+    margin: '3vw',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  medCol: {
+    flexDirection: 'column',
+    flex: 1,
     margin: '3vw',
     alignItems: 'center',
     justifyContent: 'flex-start',

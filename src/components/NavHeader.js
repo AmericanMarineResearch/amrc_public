@@ -19,7 +19,32 @@ import { __COMPONENT_STYLES__ } from '../global/Styles.js'
 import { PrimaryColor, White } from '../global/Colors.js'
 
 export default class NavHeader extends Component {
+
+
+
   render() {
+
+    return (
+      <div>
+        <Navbar style={styles.container} staticTop >
+          <Navbar.Header>
+            <Navbar.Brand>
+
+              <a style={styles.text} href="home">
+                <img src="/images/amrc_secondary-01.png" style={styles.logo} />
+              </a>
+            </Navbar.Brand>
+          </Navbar.Header>
+          <Nav pullRight style={styles.nav}>
+            <NavItem style={styles.menuitem} eventKey={4} href="about">WHO WE ARE</NavItem>
+            <NavItem style={styles.menuitem} eventKey={5} href="research">RESEARCH</NavItem>
+            <NavItem style={styles.menuitem} eventKey={6} href="sponsor">SPONSORS & ENDORSEMENTS</NavItem>
+            <NavItem style={styles.menuitem} eventKey={7} href="contact">CONTACT</NavItem>
+          </Nav>
+        </Navbar>
+      </div>
+    );
+
     return (
       <div>
         <Navbar style={styles.container} staticTop >

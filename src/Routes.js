@@ -36,28 +36,6 @@ class Routes extends React.Component {
 
   render() {
 
-    if (__DEV__) {
-      return (
-        <Router {...this.props}>
-          <Switch>
-            <Route path="/404" component={NotFoundPage} />
-            <Redirect exact from="/" to='/home' />
-            <Route path="/home/"            component={HomePage} />
-            <Route path="/team/"            component={ComingSoonPage} />
-            <Route path="/research/"            component={ComingSoonPage} />
-            <Route path="/careers/"            component={ComingSoonPage} />
-            <Route path="/contact/"            component={ContactPage} />
-            <Route path="/sponsor/"            component={ComingSoonPage} />
-            <Route path="/mission/"            component={ComingSoonPage} />
-            <Route path="/fisheries/"            component={ComingSoonPage} />
-
-            <Redirect from="*" to='/404' />
-          </Switch>
-        </Router>
-
-
-      )
-    }
 
     return (
       <Router {...this.props}>
@@ -66,6 +44,7 @@ class Routes extends React.Component {
           <Redirect exact from="/" to='/home' />
           <Route path="/home/"            component={HomePage} />
           <Route path="/team/"            component={TeamPage} />
+          <Route path="/about/"            component={TeamPage} />
           <Route path="/research/"            component={AccessDeniedPage} />
           <Route path="/careers/"            component={CareersPage} />
           <Route path="/contact/"            component={ContactPage} />
