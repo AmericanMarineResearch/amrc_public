@@ -207,8 +207,6 @@ export default class HomePage extends Component {
           </div>
         </div>
 
-        <FooterContactForm/>
-        <FooterContactForm/>
         <Footer/>
       </div>
     );
@@ -324,12 +322,12 @@ const styles = {
   },
   hcap: {
     marginTop: 5,
-    width: 88,
-    height: 8,
+    minWidth: 88,
+    minHeight: 8,
     flex: 0,
     display: 'flex',
     backgroundColor: White(1),
-    marginBottom: 20,
+    marginBottom: 5,
   },
   hcapGreen: {
     backgroundColor: 'r(63, 151, 142, 1)'
