@@ -225,8 +225,8 @@ position: fixed;
   75% {
     background-position: 0 100%;
   }
-  200% {
-    background-position: 0 0;
+  100% {
+    background-position: 100% 100%;
   }
 }
 
@@ -243,8 +243,8 @@ position: fixed;
   75% {
     background-position: 100% 50%;
   }
-  200% {
-    background-position: 0 0;
+  100% {
+    background-position: 0% 50%;
   }
 }
 

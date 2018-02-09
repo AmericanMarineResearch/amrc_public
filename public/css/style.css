@@ -1,11 +1,12 @@
-@import 'https://fonts.googleapis.com/css?family=Lora:400,400i,700|Raleway:300,600,700,900';
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700');
+
 @import 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 /*Global Settings*/
 body{
-	font-family: 'Lora', serif;
+	font-family: 'Prompt', sans-serif;
 }
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Prompt', sans-serif;
 	text-transform: uppercase;
 	font-weight: 900;
 	color: #424242;
@@ -376,7 +377,7 @@ section{
 	display: block;
 }
 .about span{
-	font-family: 'Raleway';
+	font-family: 'Prompt', sans-serif;
 	font-weight: 600;
 }
 

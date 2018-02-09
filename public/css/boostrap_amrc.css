@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
-
+/*@import url('https://fonts.googleapis.com/css?family=Prompt:200,300,400,500,600,700,800|Prompt:300,300i,400,400i,500,500i,600,600i,700');
+*/
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700');
 /*!
  * bootswatch v3.3.7
  * Homepage: http://bootswatch.com
@@ -15,29 +15,8 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-/*
-  TODO: PUT IN AVENIR AS FONT;
-*/
-/*@font-face {
-    font-family: "Avenir";
-    src:url("/public/fonts/Open Sans.ttc");
-}
-
-Avenir{
-    font-family:"Vanir";
-}
-
-@font-face {
-    font-family: "OROSKO";
-    src:url("/public/fonts/OROSKO.ttc");
-}
-
-OROSKO{
-    font-family:"OROSKO";
-}
-*/
 html {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Prompt', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   max-width: 100%;
@@ -297,7 +276,7 @@ th {
   }
 }
 @font-face {
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Prompt', 'Glyphicons Halflings', sans-serif;
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
@@ -1115,7 +1094,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Prompt", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.42857143;
   color: #777777;
@@ -1216,7 +1195,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Prompt", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.1;
   color: #444444;
@@ -1298,29 +1277,36 @@ h6 .small,
 h1,
 .h1 {
   font-size: 33px;
+  font-family: 'Prompt', sans-serif;
 }
 h2,
 .h2 {
   font-size: 27px;
+  font-family: 'Prompt', sans-serif;
 }
 h3,
 .h3 {
   font-size: 23px;
+  font-family: 'Prompt', sans-serif;
 }
 h4,
 .h4 {
   font-size: 17px;
+  font-family: 'Prompt', sans-serif;
 }
 h5,
 .h5 {
   font-size: 13px;
+  font-family: 'Prompt', sans-serif;
 }
 h6,
 .h6 {
   font-size: 12px;
+  font-family: 'Prompt', sans-serif;
 }
 p {
   margin: 0 0 9px;
+  font-family: 'Prompt', sans-serif;
 }
 .lead {
   margin-bottom: 18px;
@@ -1564,7 +1550,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: 'Prompt', Monaco, Consolas, "Courier New", monospace;
 }
 code {
   padding: 2px 4px;
@@ -6038,7 +6024,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Prompt", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6156,7 +6142,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Prompt", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6804,7 +6790,7 @@ button.close {
   color: #d9230f;
 }
 .btn {
-  font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Prompt", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .btn-default,
 .btn-default:hover {

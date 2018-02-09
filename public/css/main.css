@@ -1,6 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700');
+
 @font-face {
-  font-family: 'icomoon';
+  font-family: 'Prompt', sans-serif;
   src: url("fonts/icomoon.eot?s48t1q");
   src: url("fonts/icomoon.eot?s48t1q#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?s48t1q") format("truetype"), url("fonts/icomoon.woff?s48t1q") format("woff"), url("fonts/icomoon.svg?s48t1q#icomoon") format("svg");
   font-weight: normal;
@@ -9,7 +10,7 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'Prompt', sans-serif;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -79,7 +80,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: 'Prompt', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -396,7 +397,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Prompt', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: #fff;
@@ -1998,7 +1999,7 @@ body {
   background-color: #fd634e;
   font-size: 14px;
   line-height: 1.6;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Prompt', sans-serif;
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
