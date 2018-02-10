@@ -21,6 +21,8 @@ import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
 
+let __PEOPLE__ = require('../data/people.json')
+
 export default class AboutPage extends Component {
   constructor(props) {
     super(props)
@@ -37,7 +39,7 @@ export default class AboutPage extends Component {
   render() {
     return (
       <div>
-        <NavHeader/>
+        <NavHeader activeKey={'about'}/>
 
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
           <BackgroundImage 
@@ -57,24 +59,24 @@ export default class AboutPage extends Component {
           pan={null}
           contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
 
-          <div style={styles.hcap}/>
+          <div style={styles.center}>
+            <div style={styles.hcap}/>
+          </div>
+
           <h2 style={styles.subtitle}>
             THE TEAM
           </h2>
 
-          <TeamMemberCard
-            name={'Yuan Wang'}
-            title={"President"}
-            image={'/images/pexels-photo-260551.jpeg'}
-            bio={"Yuan hails from Los Angeles"}
-          />
-          <TeamMemberCard
-            name={'Kiara Korkuc'}
-            title={'Mechanical Engineer'}
-            bio={"Kiara hails from Gulf Breeze"}/>
-
-          <TeamMemberCard/>
-          <TeamMemberCard/>
+          {
+          __PEOPLE__.map((item, index) => {
+            return <TeamMemberCard
+                    name={item.name}
+                    title={item.title}
+                    image={item.headshot}
+                    bio={item.bio}
+                  />
+            })
+          }
           
         </BackgroundImage>
         <Footer/>
@@ -105,12 +107,17 @@ class TeamMemberCard extends Component {
       <div 
         style={{...teamCardStyles.container, ...{opacity: this.state.opacity}}} 
         onClick={this.onHover} >
-        <div style={{...teamCardStyles.col, }}>
-          <BackgroundImage 
-            background={'url(' + this.props.image + ')'}
-            pan={'still'}
-            contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
-          </BackgroundImage>
+        <div style={
+            { ...teamCardStyles.col,  
+              ...{
+                backgroundImage: 'url(' + this.props.image + ')',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: '50% 50%',
+              }
+            }
+          }>
+
         </div>
         <div style={{...teamCardStyles.col2, ...teamCardStyles.column}}>
           <div style={teamCardStyles.blueCap} />
@@ -131,6 +138,12 @@ class TeamMemberCard extends Component {
   }
 }
 
+//<BackgroundImage 
+//            background={'url(' + this.props.image + ')'}
+//            pan={'still'}
+//            contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
+//          </BackgroundImage>
+
 TeamMemberCard.defaultProps = {
   name: 'Rachel Hogue',
   title: "Chief Designer",
@@ -144,7 +157,7 @@ const teamCardStyles = {
     flex: 1,
     display: 'flex',
     margin: 20,
-    minHeight: 400,
+    minHeight: 280,
     alignItems: 'stretch',
     justifyContent: 'flex-start',
     flexDirection: 'row'
@@ -207,8 +220,16 @@ const teamCardStyles = {
 
 const styles = {
   jumbotron: {
-    height: '100vh',
+    height: '90vh',
     marginBottom: 0,
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+    flex: 1,
+    height: 40,
+    backgroundColor: 'green'
   },
   vline: {
     flex: 1,
@@ -359,7 +380,7 @@ const styles = {
     paddingLeft: '5vw',
     paddingRight: '5vw',
     justifyContent: 'flex-start',
-    alignItems: 'stretch',
+    alignItems: 'center',
     display: 'flex',
     flex: 1,
   },

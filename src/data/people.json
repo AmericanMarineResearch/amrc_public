@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Yuan Wang",
+    "title": "President",
+    "quote": "Whatever good we achieve must be scalable.",
+    "headshot": "/images/headshots/yuan.jpg",
+    "bio": "Yuan is a project manager, software engineer and mathematician who brings tech entrepreneurship experience and data-driven strategy to AMRC. Yuan offers both technical and nontechnical experience as well as a faith-driven mission to the group. Yuan holds a degree in mathematics from Princeton University, where he won $60,000 in prizes for puzzle solving and found success in entrepreneurship and programming competitions for startups in algorithmic medical triage to robotic bartending. In industry, Yuan has worked in data modeling, software engineering, and product management capacities at high powered firms in aerospace, computer vision, and global macro hedge funds."
+  },
+  {
+    "name": "Kiara Korkuc",
+    "title": "Engineer",
+    "quote": "We need to broaden researchers' understanding on lionfish ecology.",
+    "headshot": "/images/headshots/kiarak.jpg",
+    "bio": "Kiara was AMRC’s first intern and now co-leads the team’s ongoing prototyping efforts in Pensacola, FL. She is currently finishing her undergraduate studies at the University of West Florida. Although a relatively new entrant to the world of tech startups and applied engineering, Kiara proved herself a fast learners and excellent implementer, where her grit and intelligence make her an invaluable asset to the firm’s ongoing development."
+  },
+  {
+    "name": "Brian Arnold",
+    "title": "Engineer",
+    "quote": "I know fish.",
+    "headshot": "/images/headshots/brian.jpg",
+    "bio": "Brian is Pensacola native and co-leads with Kiara the team’s build efforts in Pensacola. As a roboticist, Brian has had experience in project management, engineering and implementation in marine robotics through UWF’s autonomous boat team, a competitive robotics program where Brian demonstrated both strong engineering intuition and excellent leadership ability. As the owner of a fishing resources supply business and as an avid fisherman himself, Brian brings strong intuition and boots-on-the-ground expertise to the team."
+  },
+  {
+    "name": "Zachary Pennington",
+    "title": "Engineer",
+    "quote": "",
+    "headshot": "/images/headshots/zack.jpg",
+    "bio": "Zachary hails from our very own Pensacola and joined AMRC as an intern in his final semester at the University of South Alabama before joining full-time in January of 2018. A talented engineering mind with both design and implementation skills, Zach has driven key design decisions with a keen eye to resourcefulness." 
+  }
+
+
+]
+

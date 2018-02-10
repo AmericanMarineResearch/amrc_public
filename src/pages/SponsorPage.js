@@ -31,7 +31,7 @@ export default class SponsorPage extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <NavHeader/>
+        <NavHeader activeKey={'sponsor'}/>
 
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
           <BackgroundImage contentStyle={__COMPONENT_STYLES__.jumboContent}>

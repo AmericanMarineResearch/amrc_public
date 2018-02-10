@@ -31,7 +31,7 @@ export default class ContactPage extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <NavHeader/>
+        <NavHeader activeKey={'contact'}/>
 
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
           <BackgroundImage contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.bodyTop}}>

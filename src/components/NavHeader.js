@@ -36,10 +36,34 @@ export default class NavHeader extends Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight style={styles.nav}>
-            <NavItem style={styles.menuitem} eventKey={4} href="about">WHO WE ARE</NavItem>
-            <NavItem style={styles.menuitem} eventKey={5} href="research">RESEARCH</NavItem>
-            <NavItem style={styles.menuitem} eventKey={6} href="sponsor">SPONSORS & ENDORSEMENTS</NavItem>
-            <NavItem style={styles.menuitem} eventKey={7} href="contact">CONTACT</NavItem>
+            <NavItem 
+              active={this.props.activeKey == 'about' ? true : false} 
+              style={styles.menuitem} 
+              eventKey={4} 
+              href="about">
+              WHO WE ARE
+            </NavItem>
+            <NavItem 
+              active={this.props.activeKey == 'research' ? true : false} 
+              style={styles.menuitem} 
+              eventKey={5} 
+              href="research">
+              RESEARCH
+            </NavItem>
+            <NavItem 
+              active={this.props.activeKey == 'sponsor' ? true : false} 
+              style={styles.menuitem} 
+              eventKey={6} 
+              href="sponsor">
+              SPONSORS & ENDORSEMENTS
+            </NavItem>
+            <NavItem 
+              active={this.props.activeKey == 'contact' ? true : false} 
+              style={styles.menuitem} 
+              eventKey={7} 
+              href="contact">
+              CONTACT
+            </NavItem>
           </Nav>
         </Navbar>
       </div>
@@ -79,6 +103,10 @@ export default class NavHeader extends Component {
       </div>
     );
   }
+}
+
+NavHeader.defaultProps = {
+  activeKey: null
 }
 
 const styles = {
