@@ -52,20 +52,17 @@ export default class AboutPage extends Component {
           <h1 style={styles.bigTitle}>
             WHO WE ARE
           </h1>
+          <img src={'/images/arrow.png'} />
         </div>
 
         <BackgroundImage 
           background={'url(/images/pexels-photo-260551.jpeg)'}
           pan={null}
           contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
-
-          <div style={styles.center}>
-            <div style={styles.hcap}/>
-          </div>
-
           <h2 style={styles.subtitle}>
             THE TEAM
           </h2>
+          <div style={styles.hcap}/>
 
           {
           __PEOPLE__.map((item, index) => {
@@ -74,6 +71,7 @@ export default class AboutPage extends Component {
                     title={item.title}
                     image={item.headshot}
                     bio={item.bio}
+                    arrangement={index % 2}
                   />
             })
           }
@@ -101,13 +99,11 @@ class TeamMemberCard extends Component {
     })
   }
 
-  render() {
-
+  renderHeadshotColumn() {
     return (
-      <div 
-        style={{...teamCardStyles.container, ...{opacity: this.state.opacity}}} 
-        onClick={this.onHover} >
-        <div style={
+      <div  
+        key={0}
+        style={
             { ...teamCardStyles.col,  
               ...{
                 backgroundImage: 'url(' + this.props.image + ')',
@@ -118,21 +114,53 @@ class TeamMemberCard extends Component {
             }
           }>
 
-        </div>
-        <div style={{...teamCardStyles.col2, ...teamCardStyles.column}}>
-          <div style={teamCardStyles.blueCap} />
-          <h3 style={teamCardStyles.name}>
-            {this.props.name}
-          </h3>
-          <h4 style={teamCardStyles.position}>
-            {this.props.title}
-          </h4>
-        </div>
-        <div style={{...teamCardStyles.col3, ...teamCardStyles.column}}>
-          <p style={teamCardStyles.bio}>
-            {this.props.bio}
-          </p>
-        </div>
+      </div>
+    )
+  }
+
+  renderNameColumn() {
+    return (
+      <div  
+        key={1}
+        style={{...teamCardStyles.col2, ...teamCardStyles.column}}>
+        <div style={teamCardStyles.blueCap} />
+        <h3 style={teamCardStyles.name}>
+          {this.props.name}
+        </h3>
+        <h4 style={teamCardStyles.position}>
+          {this.props.title}
+        </h4>
+      </div>
+    )
+  }
+
+  renderBioColumn() {
+    return (
+      <div 
+        key={2}
+        style={{...teamCardStyles.col3, ...teamCardStyles.column}}>
+        <p style={teamCardStyles.bio}>
+          {this.props.bio}
+        </p>
+      </div>
+    )
+  }
+
+  render() {
+    var columns = []
+    if (this.props.arrangement == 0) {
+      columns = [this.renderHeadshotColumn(), this.renderNameColumn(), this.renderBioColumn()]
+    }
+    else {
+      columns = [this.renderBioColumn(), this.renderNameColumn(), this.renderHeadshotColumn()]
+    }
+
+
+    return (
+      <div 
+        style={{...teamCardStyles.container, ...{opacity: this.state.opacity}}} 
+        onClick={this.onHover} >
+        {columns}
       </div>
     )
   }
@@ -148,7 +176,8 @@ TeamMemberCard.defaultProps = {
   name: 'Rachel Hogue',
   title: "Chief Designer",
   bio: 'Rachel is a rockstart designer.',
-  image: '/images/amrc-01.png'
+  image: '/images/amrc-01.png',
+  arrangement: 0
 }
 
 const teamCardStyles = {
@@ -157,7 +186,7 @@ const teamCardStyles = {
     flex: 1,
     display: 'flex',
     margin: 20,
-    minHeight: 280,
+    minHeight: 360,
     alignItems: 'stretch',
     justifyContent: 'flex-start',
     flexDirection: 'row'
@@ -330,8 +359,8 @@ const styles = {
   },
   hcap: {
     marginTop: 5,
-    maxWidth: 88,
-    maxHeight: 8,
+    minWidth: 88,
+    minHeight: 5,
     flex: 1,
     display: 'flex',
     backgroundColor: White(1),
