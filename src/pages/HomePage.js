@@ -45,19 +45,37 @@ export default class HomePage extends Component {
 
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
           <BackgroundImage 
+            backgroundColor={Black(0.3)}
             background={'url(/images/erin-simmons-382355.jpg)'}
-            contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
-            <img src="/images/amrc-01.png" style={styles.logo} />
-           
-            <div style={styles.hline}/>
-            <p style={styles.title}>
-              {"Innovations for Healthy Oceans".toUpperCase()}
-            </p>
-            <p style={styles.text}>
-              At American Marine Research Company, we're revolutionizing the way we protect our oceans using interdisciplinary applications of data, technology and engineering.
-            </p>
-            <div style={styles.hline}/>
-            <img src={'/images/whitearrow.png'} style={styles.arrow} />
+            contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.jumboContent}}>
+            
+
+            <div 
+              style={{
+                flex: 1, 
+                display: 'flex', 
+                justifyContent: 'center', 
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                paddingLeft: '5vw',
+                paddingRight: '20vw',
+              }}>
+              <p style={styles.bigTitle}>
+                {"Innovations for Healthy Oceans".toUpperCase()}
+              </p>
+              <div style={styles.hcap}/>
+            </div>
+
+            <div 
+              style={{
+                flex: 0, 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center'
+              }}>
+              <img src={'/images/whitearrow.png'} style={styles.arrow} />
+            </div>
+
           </BackgroundImage>
         </Jumbotron>
 
@@ -233,6 +251,15 @@ const styles = {
     marginBottom: 0,
     justifyContent: 'flex-end',
   },
+  jumboContent: {
+    justifyContent: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    flex: 1,
+    display: 'flex',
+    paddingTop: '10vh',
+    paddingBottom: 40,
+  },
   vline: {
     flex: 1,
     display: 'flex',
@@ -295,6 +322,15 @@ const styles = {
     color: White(0.4),
     fontSize: 14,
     marginTop: 30,
+  },
+  bigTitle: {
+    fontSize: 80,
+    color: White(1),
+    letterSpacing: '110%',
+    fontWeight: 600,
+    marginBottom: 10,
+    textAlign: 'start',
+    lineHeight: '94%',
   },
   title: {
     fontSize: 30,
