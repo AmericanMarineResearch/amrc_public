@@ -51,12 +51,13 @@ export default class HomePage extends Component {
            
             <div style={styles.hline}/>
             <p style={styles.title}>
-              Innovations for Healthy Oceans
+              {"Innovations for Healthy Oceans".toUpperCase()}
             </p>
             <p style={styles.text}>
               At American Marine Research Company, we're revolutionizing the way we protect our oceans using interdisciplinary applications of data, technology and engineering.
             </p>
             <div style={styles.hline}/>
+            <img src={'/images/whitearrow.png'} style={styles.arrow} />
           </BackgroundImage>
         </Jumbotron>
 
@@ -135,18 +136,20 @@ export default class HomePage extends Component {
                   height: '80vh', 
                 }}}>
 
-              <div style={styles.smallCol}>
-                <div style={{...styles.hcap, ...styles.hcapGreen}}/>
-                <p style={styles.text}>
-                  The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
-                </p>
-              </div>
+              <div style={styles.sinker}>
+                <div style={styles.smallCol}>
+                  <div style={{...styles.hcap, ...styles.hcapGreen}}/>
+                  <p style={styles.text}>
+                    The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
+                  </p>
+                </div>
 
-              <div style={styles.smallCol}>
-                <div style={{...styles.hcap, ...styles.hcapBlue}}/>
-                <p style={styles.text}>
-                  Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
-                </p>
+                <div style={styles.smallCol}>
+                  <div style={{...styles.hcap, ...styles.hcapBlue}}/>
+                  <p style={styles.text}>
+                    Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -226,8 +229,9 @@ export default class HomePage extends Component {
 
 const styles = {
   jumbotron: {
-    height: '120vh',
+    height: '105vh',
     marginBottom: 0,
+    justifyContent: 'flex-end',
   },
   vline: {
     flex: 1,
@@ -323,17 +327,20 @@ const styles = {
   hcap: {
     marginTop: 5,
     minWidth: 88,
-    minHeight: 8,
+    minHeight: 5,
+    maxWidth: 88,
+    maxHeight: 5,
     flex: 0,
     display: 'flex',
     backgroundColor: White(1),
-    marginBottom: 5,
   },
   hcapGreen: {
-    backgroundColor: 'r(63, 151, 142, 1)'
+    backgroundColor: 'rgba(63, 151, 142, 1)',
+    marginBottom: -10
   },
   hcapBlue: {
-    backgroundColor: 'r(20, 148, 201, 1)'
+    backgroundColor: 'rgba(20, 148, 201, 1)',
+    marginBottom: -10
   },
   column: {
     display: 'flex',
@@ -343,9 +350,15 @@ const styles = {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
+  sinker: {
+    justifyContent: 'flex-start',
+    display: 'flex',
+    flex: 1,
+  },
   smallCol: {
     flexDirection: 'column',
     flex: 1,
+    display: 'flex',
     width: '30vw',
     margin: '3vw',
     alignItems: 'center',
@@ -371,13 +384,15 @@ const styles = {
   body: {
     paddingLeft: '20vw',
     paddingRight: '20vw',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
   body2: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  arrow: {
+    height: 60
   }
-
 }
 

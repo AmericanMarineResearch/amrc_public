@@ -315,9 +315,10 @@ position: fixed;
   position: relative;
   height: 100%;
   width: 100%;
-  background: black url(http://unsplash.it/1900/1900/?random&blur);
-  background-size: 150%;
-  animation: panningB 300s infinite linear;
+  background-size: 160%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  animation: panningB 120s infinite linear;
 }
 
 .pan6 {

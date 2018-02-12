@@ -52,7 +52,7 @@ export default class AboutPage extends Component {
           <h1 style={styles.bigTitle}>
             WHO WE ARE
           </h1>
-          <img src={'/images/arrow.png'} />
+          <img src={'/images/arrow.png'} style={styles.arrow} />
         </div>
 
         <BackgroundImage 
@@ -416,6 +416,9 @@ const styles = {
   body2: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  arrow: {
+    height: 60
   }
 
 }
