@@ -47,7 +47,7 @@ class Routes extends React.Component {
           <Route path="/home/"            component={HomePage} />
           <Route path="/team/"            component={TeamPage} />
           <Route path="/about/"            component={AboutPage} />
-          <Route path="/research/"            component={AccessDeniedPage} />
+          <Route path="/research/"            component={ComingSoonPage} />
           <Route path="/careers/"            component={CareersPage} />
           <Route path="/contact/"            component={ContactPage} />
           <Route path="/sponsor/"            component={ComingSoonPage} />
