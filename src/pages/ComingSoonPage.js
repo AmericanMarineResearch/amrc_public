@@ -38,7 +38,7 @@ export default class ComingSoonPage extends Component {
            
             <div style={styles.hline}/>
             <p style={styles.text}>
-              Thank you for visiting American Marine Research Company. From January 29 to February 10 we will be overhauling our website. We thank you for your patience during this time.
+              Thank you for visiting American Marine Research Company. From January 29 to February 15 we will be overhauling our website. We thank you for your patience during this time.
             </p>
             <div style={styles.hline}/>
             

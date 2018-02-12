@@ -57,7 +57,7 @@ export default class AboutPage extends Component {
 
         <BackgroundImage 
           background={'url(/images/pexels-photo-260551.jpeg)'}
-          pan={null}
+          pan={"still"}
           contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
           <h2 style={styles.subtitle}>
             THE TEAM
@@ -249,7 +249,7 @@ const teamCardStyles = {
 
 const styles = {
   jumbotron: {
-    height: '90vh',
+    height: '70vh',
     marginBottom: 0,
   },
   center: {
@@ -304,8 +304,8 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     width: '100vw',
-    paddingTop: '8vh',
-    paddingBottom: '8vh',
+    paddingTop: '4vh',
+    paddingBottom: '4vh',
     paddingLeft: '15vw',
     paddingRight: '15vw'
   },
