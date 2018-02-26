@@ -297,6 +297,7 @@ position: fixed;
   position: relative;
   height: 100%;
   width: 100%;
+  z-index: 1;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -361,6 +362,35 @@ position: fixed;
   animation: move 40s infinite linear;
 }
 
+.pan8 {
+  position: absolute;
+  height: 100%;
+  width: 140%;
+  z-index: -1;
+  background-size: auto 160%;
+  background-repeat: no-repeat;
+  animation: MOVE-BG 60s infinite linear;
+  -webkit-animation-name: MOVE-BG;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.pan9 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-size: auto 160%;
+  background-repeat: no-repeat;
+  animation: MOVE-BGV 60s infinite linear;
+  -webkit-animation-name: MOVE-BGV;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 
 .overlay {
   position: absolute;
@@ -400,12 +430,21 @@ position: fixed;
 }
 
 
-@-webkit-keyframes MOVE-BG {
+@-webkit-keyframes MOVE-BGV {
    from {
-     -webkit-transform: translateX(0);
+     -webkit-transform: translateY(20%);
    }
    to { 
-     -webkit-transform: translateX(-187%);
+     -webkit-transform: translateY(0%);
+   }
+}
+
+@-webkit-keyframes MOVE-BG {
+   from {
+     -webkit-transform: translateX(0%);
+   }
+   to { 
+     -webkit-transform: translateX(-20%);
    }
 }
 

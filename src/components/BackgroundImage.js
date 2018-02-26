@@ -11,15 +11,51 @@ const BACKGROUND_IMAGE_URL = 'url(https://www.scholastic.com/content/dam/teacher
 export default class BackgroundImage extends Component {
 
   render() {
+
+    if (true) {
+      return (
+        <div 
+          style={{
+            display: 'flex',
+            flex: 1,
+            backgroundColor: this.props.backgroundColor
+          }}
+          class={"still"}
+          >
+
+          <div 
+            style={{
+              display: 'absolute',
+              flex: 0,
+              backgroundImage: this.props.background,
+            }}
+            class={'pan8'}
+          />
+          
+          <div
+            style={{...{
+              display: 'flex',
+              flex: 1,
+              backgroundColor: this.props.backgroundColor
+            }, ...this.props.contentStyle}}>
+            {this.props.children}
+          </div>
+
+        </div>
+              
+        );
+
+    }
+
   	return (
       <div 
         style={{
           display: 'flex',
           flex: 1,
           backgroundImage: this.props.background,
-
         }}
         class={this.props.pan} >
+
         
         <div
           style={{...{
@@ -28,7 +64,8 @@ export default class BackgroundImage extends Component {
             backgroundColor: this.props.backgroundColor
           }, ...this.props.contentStyle}}>
           {this.props.children}
-        </div>      
+        </div>
+
       </div>
             
       );
