@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@blueprintjs/core": "^1.35.0",
+    "@blueprintjs/core": "^1.35.5",
     "chart.js": "^2.7.1",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-addons-perf": "^15.4.2",
     "react-autobind": "^1.0.6",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
@@ -17,8 +18,8 @@
     "react-scripts": "1.0.17",
     "react-spark-scroll-gsap": "^4.0.0",
     "react-spark-scroll-rekapi": "^4.0.0",
-    "reactstrap": "^5.0.0-alpha.4",
-    "recharts": "^1.0.0-beta.9"
+    "reactstrap": "^5.0.0-beta",
+    "recharts": "^1.0.0-beta.10"
   },
   "scripts": {
     "start": "react-scripts start",

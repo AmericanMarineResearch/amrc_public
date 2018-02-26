@@ -6,6 +6,8 @@ import { Black } from '../global/Colors.js'
 
 const BACKGROUND_IMAGE_URL = 'url(https://www.scholastic.com/content/dam/teachers/Book%20List/2016-2017/books-about-oceans-book-list-4-3.jpg)'
 
+// TODO: implement https://stackoverflow.com/questions/21087518/animate-css-background-position-with-smooth-results-sub-pixel-animation
+
 export default class BackgroundImage extends Component {
 
   render() {

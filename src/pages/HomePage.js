@@ -90,11 +90,12 @@ export default class HomePage extends Component {
         </Jumbotron>
         </Fade>
 
+        <Fade cascade bottom>
         <div style={{
           ...styles.section2, 
           ...{ paddingLeft: '20vw', paddingRight: '20vw', paddingTop: '9vh', paddingBottom: '9vh'}
           }}>
-          <Fade cascade bottom>
+
             <div style={styles.hcap}/>
             <h1
               style={styles.title}>
@@ -118,14 +119,14 @@ export default class HomePage extends Component {
               <img src="/images/recreationalfishing-01.png" style={styles.logo} />
               <img src="/images/salesgauge-01.png" style={styles.logo} />
             </div>
-          </Fade>
 
         </div>
+        </Fade>
 
         <div style={styles.section3}>
-
-          <div style={{...styles.column, ...{paddingLeft: '15vw'}}} >
-            <Fade cascade bottom>
+          <Fade cascade bottom>
+            <div style={{...styles.column, ...{paddingLeft: '15vw'}}} >
+              
               <div style={styles.hcap}/>
 
               <h1 style={{...styles.title, ...styles.justifyLeft}}>
@@ -142,8 +143,9 @@ export default class HomePage extends Component {
                 It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
               </p>
 
-            </Fade>
-          </div>
+              
+            </div>
+          </Fade>
           <div 
             style={{...styles.column, 
                     ...{
@@ -278,6 +280,7 @@ export default class HomePage extends Component {
 //     <Col sm={6} md={3}><h3>Content Title</h3><br />{dummySentences.slice(0, 2).join(' ')}</Col>
 //   </Row>
 // </Grid>
+
 
 const styles = {
   jumbotron: {
