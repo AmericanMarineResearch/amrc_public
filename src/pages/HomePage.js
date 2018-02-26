@@ -98,7 +98,7 @@ export default class HomePage extends Component {
             <div style={styles.hcap}/>
             <h1
               style={styles.title}>
-              {"THE LIONFISH PROBLEM"}
+              {"THE LIONFISH PROBLEM "}
             </h1>
 
 
