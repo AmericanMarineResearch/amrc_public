@@ -230,6 +230,15 @@ position: fixed;
   }
 }
 
+@keyframes move {
+  0%, 100% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+}
+
 @keyframes panningB {
   0% {
     background-position: 0% 50%;
@@ -246,6 +255,15 @@ position: fixed;
   100% {
     background-position: 0% 50%;
   }
+}
+
+@-webkit-keyframes panningBB {
+   from {
+     -webkit-transform: translateX(0);
+   }
+   to { 
+     -webkit-transform: translateX(-187%);
+   }
 }
 
 @keyframes panningC {
@@ -312,10 +330,11 @@ position: fixed;
 }
 
 .pan5 {
+
   position: relative;
   height: 100%;
   width: 100%;
-  background-size: 160%;
+  background-size: auto 160%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   animation: panningB 120s infinite linear;
@@ -329,6 +348,17 @@ position: fixed;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   animation: panningB 120s infinite linear;
+}
+
+.pan7 {
+
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: auto 160%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  animation: move 40s infinite linear;
 }
 
 
@@ -367,4 +397,37 @@ position: fixed;
   a: {
     color: rbga(0,0,0,1);
   }
+}
+
+
+@-webkit-keyframes MOVE-BG {
+   from {
+     -webkit-transform: translateX(0);
+   }
+   to { 
+     -webkit-transform: translateX(-187%);
+   }
+}
+
+#content {
+  height: 300px;
+  text-align: center;
+  font-size: 26px;
+  color: #000;
+  position:relative;
+}
+
+.bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: url(http://www.gstatic.com/webp/gallery/1.jpg) 0% 0% repeat;
+
+  -webkit-animation-name: MOVE-BG;
+  -webkit-animation-duration: 100s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
 }

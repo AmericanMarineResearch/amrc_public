@@ -21,6 +21,12 @@ import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
 import FooterContactForm from '../components/FooterContactForm.js'
+// var {SparkScroll, SparkProxy, sparkScrollFactory} =
+//   require('react-spark-scroll/spark-scroll-rekapi')({
+//     invalidateAutomatically: true
+//   });
+import { Bounce, Zoom, Fade, Slide} from 'react-reveal';
+
 const dummySentences = ['Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 'Donec hendrerit tempor tellus.', 'Donec pretium posuere tellus.', 'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Nulla posuere.', 'Donec vitae dolor.', 'Nullam tristique diam non turpis.', 'Cras placerat accumsan nulla.', 'Nullam rutrum.', 'Nam vestibulum accumsan nisl.'];
 
 var text = "The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."
@@ -42,91 +48,107 @@ export default class HomePage extends Component {
     return (
       <div>
         <NavHeader/>
-
+        <Fade>
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
           <BackgroundImage 
+            pan={'pan7'}
             backgroundColor={Black(0.3)}
             background={'url(/images/erin-simmons-382355.jpg)'}
             contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.jumboContent}}>
             
+            <Fade bottom cascade>
+              <div 
+                style={{
+                  flex: 1, 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  paddingLeft: '5vw',
+                  paddingRight: '20vw',
+                }}>
 
-            <div 
-              style={{
-                flex: 1, 
-                display: 'flex', 
-                justifyContent: 'center', 
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                paddingLeft: '5vw',
-                paddingRight: '20vw',
-              }}>
-              <p style={styles.bigTitle}>
-                {"Innovations for Healthy Oceans".toUpperCase()}
-              </p>
-              <div style={styles.hcap}/>
-            </div>
+                <p style={styles.bigTitle}>
+                  {"Innovations for Healthy Oceans".toUpperCase()}
+                </p>
 
-            <div 
-              style={{
-                flex: 0, 
-                display: 'flex', 
-                justifyContent: 'center', 
-                alignItems: 'center'
-              }}>
-              <img src={'/images/whitearrow.png'} style={styles.arrow} />
-            </div>
+                <div style={styles.hcap}/>
+              </div>
+
+              <div 
+                style={{
+                  flex: 0, 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center'
+                }}>
+                <img src={'/images/whitearrow.png'} style={styles.arrow} />
+              </div>
+            </Fade>
 
           </BackgroundImage>
         </Jumbotron>
+        </Fade>
 
         <div style={{
           ...styles.section2, 
           ...{ paddingLeft: '20vw', paddingRight: '20vw', paddingTop: '9vh', paddingBottom: '9vh'}
           }}>
-          <div style={styles.hcap}/>
+          <Fade>
+            <div style={styles.hcap}/>
+          </Fade>
 
-          <h1 style={styles.title}>
-            {"The Lionfish Problem".toUpperCase()}
-          </h1>
+          <Fade cascade bottom>
+            <h1
+              style={styles.title}>
+              {"The Lionfish Problem".toUpperCase()}
+            </h1>
 
-          <p style={styles.textLighter}>
-            {"The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."}  
-          </p>
-          <p style={styles.textLighter}>
-            Alarmingly, the only form of lionfish control that exists today is hunting in shallow water by human divers, but it is too limited by logistical and economic constraints to realistically offer a lasting solution to this problem.
-          </p>
-          <p style={styles.textLighter}>
-            The lionfish invasion is a particularly concerning threat to Western Florida, as marine resources are critical to the region’s economic health: according to the NOAA, recreational fishing generated ~70,109 jobs and $7.5 billion in sales impacts in West Florida in 2014 alone.
-          </p>
 
-          <br/>
-          <br/>
+            <p style={styles.textLighter}>
+              {"The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."}  
+            </p>
+            <p style={styles.textLighter}>
+              Alarmingly, the only form of lionfish control that exists today is hunting in shallow water by human divers, but it is too limited by logistical and economic constraints to realistically offer a lasting solution to this problem.
+            </p>
+            <p style={styles.textLighter}>
+              The lionfish invasion is a particularly concerning threat to Western Florida, as marine resources are critical to the region’s economic health: according to the NOAA, recreational fishing generated ~70,109 jobs and $7.5 billion in sales impacts in West Florida in 2014 alone.
+            </p>
 
-          <div style={{...styles.row, ...{ paddingLeft: '20vw', paddingRight: '20vw'}}}>
-            <img src="/images/recreationalfishing-01.png" style={styles.logo} />
-            <img src="/images/salesgauge-01.png" style={styles.logo} />
-          </div>
+            <br/>
+            <br/>
+          </Fade>
+
+          <Fade>
+            <div style={{...styles.row, ...{ paddingLeft: '20vw', paddingRight: '20vw'}}}>
+              <img src="/images/recreationalfishing-01.png" style={styles.logo} />
+              <img src="/images/salesgauge-01.png" style={styles.logo} />
+            </div>
+          </Fade>
 
         </div>
 
         <div style={styles.section3}>
 
           <div style={{...styles.column, ...{paddingLeft: '15vw'}}} >
-            <div style={styles.hcap}/>
+            <Fade cascade bottom>
+              <div style={styles.hcap}/>
 
-            <h1 style={{...styles.title, ...styles.justifyLeft}}>
-              {"Working Smarter".toUpperCase()}
-            </h1>
-            
-            <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-              AMRC was founded out of the conviction that marine data and artificial intelligence could offer promising insights for controlling invasive species in an economically sustainable way. 
-            </p>
-            <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-              Our mission is to data-driven methods for lionfish control, using sophistiacted technologies from a wide range of domains to advance invasive species control research.
-            </p>
-            <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-              It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
-            </p>
+              <h1 style={{...styles.title, ...styles.justifyLeft}}>
+                {"Working Smarter".toUpperCase()}
+              </h1>
+              
+              <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                AMRC was founded out of the conviction that marine data and artificial intelligence could offer promising insights for controlling invasive species in an economically sustainable way. 
+              </p>
+              <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                Our mission is to data-driven methods for lionfish control, using sophistiacted technologies from a wide range of domains to advance invasive species control research.
+              </p>
+              <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
+              </p>
+
+            </Fade>
           </div>
           <div 
             style={{...styles.column, 
@@ -134,9 +156,11 @@ export default class HomePage extends Component {
                       overflow: 'hidden',
                       justifyContent: 'center'
                     }}}>
-            <img 
-              src="/images/mathijs-vos-16905.jpg" 
-              style={styles.lionfish} />
+            <Slide right>
+              <img 
+                src="/images/mathijs-vos-16905.jpg" 
+                style={styles.lionfish} />
+            </Slide>
           </div>
         </div>
 
@@ -156,17 +180,22 @@ export default class HomePage extends Component {
 
               <div style={styles.sinker}>
                 <div style={styles.smallCol}>
-                  <div style={{...styles.hcap, ...styles.hcapGreen}}/>
-                  <p style={styles.text}>
-                    The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
-                  </p>
+                  <Slide left>
+
+                    <div style={{...styles.hcap, ...styles.hcapGreen}}/>
+                    <p style={styles.text}>
+                      The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
+                    </p>
+                  </Slide>
                 </div>
 
                 <div style={styles.smallCol}>
-                  <div style={{...styles.hcap, ...styles.hcapBlue}}/>
-                  <p style={styles.text}>
-                    Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
-                  </p>
+                  <Slide right>
+                    <div style={{...styles.hcap, ...styles.hcapBlue}}/>
+                    <p style={styles.text}>
+                      Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
+                    </p>
+                  </Slide>
                 </div>
               </div>
             </div>
@@ -175,16 +204,20 @@ export default class HomePage extends Component {
         </div>
 
         <div style={styles.blueFooter}>
-          <p style={{...styles.text, ...{fontWeight: 500}}}>
-            We are currently focusing our research in Escambia County, Okaloosa County and Santa Rosa County, with the vision of tackling lionfish infestations plaguing the entire Gulf Coast and beyond.
-          </p>
+          <Fade bottom>
+            <p style={{...styles.text, ...{fontWeight: 500}}}>
+              We are currently focusing our research in Escambia County, Okaloosa County and Santa Rosa County, with the vision of tackling lionfish infestations plaguing the entire Gulf Coast and beyond.
+            </p>
+          </Fade>
         </div>
 
         <div style={styles.section4}>
-          <img src="/images/handshake.png" style={styles.handshake} />
-          <h2 style={{...styles.textBlack, ...styles.title, ...{color: lightBlue(1)}}}>
-            {"Our Commitment".toUpperCase()}
-          </h2>
+          <Fade bottom>
+            <img src="/images/handshake.png" style={styles.handshake} />
+            <h2 style={{...styles.textBlack, ...styles.title, ...{color: lightBlue(1)}}}>
+              {"Our Commitment".toUpperCase()}
+            </h2>
+          </Fade>
           <br/>
           <div style={{ 
               ...{
@@ -194,37 +227,44 @@ export default class HomePage extends Component {
                   flex: 1,
                   display: 'flex',
                 }}}>
-            <div style={styles.medCol}>
-              <p style={{...styles.subtitle, ...styles.justifyLeft}}>
-                {"Environmental Responsibility".toUpperCase()}
-              </p>
-              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                To ensure the responsible use of our technology, for purposes that best protect and preserve the long-term health of the natural environment.
-              </p>
-              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                To partner with non-profits and the academic community in tackling the major environmental problems plaguing the area.
-              </p>
-              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                To remain transparent with our actions and accountable to the local community.
-              </p>
-            </div>
+            <Slide cascade left>
+              <div style={styles.medCol}>
+              
+                <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
+                  {"Environmental Responsibility".toUpperCase()}
+                </h2>
+                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                  To ensure the responsible use of our technology, for purposes that best protect and preserve the long-term health of the natural environment.
+                </p>
+                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                  To partner with non-profits and the academic community in tackling the major environmental problems plaguing the area.
+                </p>
+                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                  To remain transparent with our actions and accountable to the local community.
+                </p>
+              
+              </div>
+            </Slide>
 
             <div style={styles.vline}/>
-
-            <div style={{...styles.medCol, ...{borderColor: Black(0.6), borderLeftWidth: 1}}}>
-              <p style={{...styles.subtitle, ...styles.justifyLeft}}>
-                {"Economic development".toUpperCase()}
-              </p>
-              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                To employ local Floridians and providing them with training and experience to develop into highly skilled talent, as demonstrated by the fact that half our team consists of proud Pensacola locals.
-              </p>
-              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                To invest in high school and university students by providing educational opportunities to learn about and work in marine biology, data science, and business, as well as mentorship to budding entrepreneurs.
-              </p>
-              <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                To work with local fishing and charter boat communities in improving the quality of fish stocks.
-              </p>
-            </div>
+            <Slide cascade right>
+              <div style={{...styles.medCol, ...{borderColor: Black(0.6), borderLeftWidth: 1}}}>
+              
+                <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
+                  {"Economic development".toUpperCase()}
+                </h2>
+                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                  To employ local Floridians and providing them with training and experience to develop into highly skilled talent, as demonstrated by the fact that half our team consists of proud Pensacola locals.
+                </p>
+                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                  To invest in high school and university students by providing educational opportunities to learn about and work in marine biology, data science, and business, as well as mentorship to budding entrepreneurs.
+                </p>
+                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                  To work with local fishing and charter boat communities in improving the quality of fish stocks.
+                </p>
+             
+              </div>
+            </Slide>
           </div>
         </div>
 
@@ -310,6 +350,7 @@ const styles = {
     paddingRight: '15vw'
   },
   text: {
+    wordBreak: 'keep-all',
     color: White(0.8),
     fontSize: 14,
     marginTop: 30,
@@ -324,6 +365,7 @@ const styles = {
     marginTop: 30,
   },
   bigTitle: {
+    wordBreak: 'keep-all',
     fontSize: 80,
     color: White(1),
     letterSpacing: '110%',
@@ -333,6 +375,7 @@ const styles = {
     lineHeight: '94%',
   },
   title: {
+    wordBreak: 'keep-all',
     fontSize: 30,
     color: White(1),
     letterSpacing: '2px',
@@ -340,6 +383,7 @@ const styles = {
     marginBottom: 10,
   },
   subtitle: {
+    wordBreak: 'keep-all',
     fontSize: 20,
     letterSpacing: '1.2px',
     fontWeight: 600,

@@ -20,6 +20,7 @@ import Footer from '../components/Footer.js'
 import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
+import { Bounce, Zoom, Fade, Slide} from 'react-reveal';
 
 let __PEOPLE__ = require('../data/people.json')
 
@@ -33,21 +34,29 @@ export default class ContactPage extends Component {
   render() {
     return (
       <div>
-        <NavHeader activeKey={'contact'}/>
 
+        <NavHeader activeKey={'contact'}/>
+        <Fade>
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
+          
           <BackgroundImage 
+            pan={'pan7'}
             background={'url(/images/diver-diving-swimming-sea-71276.jpeg)'}
             contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
-            <h1 style={styles.bigTitle}>
-              CONTACT
-            </h1>
-            <div style={styles.hcap}/>
-            <h1 style={styles.text}>
-              team@amrc.io
-            </h1>
+            <Fade bottom>
+              <h1 style={styles.bigTitle}>
+                CONTACT
+              </h1>
+              <div style={styles.hcap}/>
+
+              <h1 style={styles.text}>
+                team@amrc.io
+              </h1>
+            </Fade>
           </BackgroundImage>
+
         </Jumbotron>
+        </Fade>
 
         
 

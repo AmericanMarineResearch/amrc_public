@@ -12,8 +12,11 @@
     "react-dom": "^16.2.0",
     "react-overlay": "^0.1.7",
     "react-overlays": "^0.8.3",
+    "react-reveal": "^1.1.8",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "react-spark-scroll-gsap": "^4.0.0",
+    "react-spark-scroll-rekapi": "^4.0.0",
     "reactstrap": "^5.0.0-alpha.4",
     "recharts": "^1.0.0-beta.9"
   },

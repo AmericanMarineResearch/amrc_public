@@ -20,6 +20,7 @@ import Footer from '../components/Footer.js'
 import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
+import { Bounce, Zoom, Fade, Slide} from 'react-reveal';
 
 let __PEOPLE__ = require('../data/people.json')
 
@@ -40,39 +41,50 @@ export default class AboutPage extends Component {
     return (
       <div>
         <NavHeader activeKey={'about'}/>
-
-        <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
-          <BackgroundImage 
-            background={'url(/images/diver-diving-swimming-sea-71276.jpeg)'}
-            contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
-          </BackgroundImage>
-        </Jumbotron>
+        <Fade>
+          <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
+            <BackgroundImage 
+              pan={'pan7'}
+              background={'url(/images/diver-diving-swimming-sea-71276.jpeg)'}
+              contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
+            </BackgroundImage>
+          </Jumbotron>
+        </Fade>
 
         <div style={styles.section4}>
-          <h1 style={styles.bigTitle}>
-            WHO WE ARE
-          </h1>
-          <img src={'/images/arrow.png'} style={styles.arrow} />
+          <Fade bottom>
+            <h1 style={styles.bigTitle}>
+              WHO WE ARE
+            </h1>
+            <img src={'/images/arrow.png'} style={styles.arrow} />
+          </Fade>
         </div>
 
         <BackgroundImage 
           background={'url(/images/pexels-photo-260551.jpeg)'}
           pan={"still"}
           contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
-          <h2 style={styles.subtitle}>
-            THE TEAM
-          </h2>
-          <div style={styles.hcap}/>
+          <Fade bottom>
+            <h2 style={styles.subtitle}>
+              THE TEAM
+            </h2>
+            <div style={styles.hcap}/>
+          </Fade>
 
           {
           __PEOPLE__.map((item, index) => {
-            return <TeamMemberCard
-                    name={item.name}
-                    title={item.title}
-                    image={item.headshot}
-                    bio={item.bio}
-                    arrangement={index % 2}
-                  />
+            return  <Slide 
+                      key={index} 
+                      left={index % 2 == 0} 
+                      right={index % 2 == 1}>
+                      <TeamMemberCard
+                        name={item.name}
+                        title={item.title}
+                        image={item.headshot}
+                        bio={item.bio}
+                        arrangement={index % 2}
+                      />
+                    </Slide>
             })
           }
           
@@ -160,7 +172,9 @@ class TeamMemberCard extends Component {
       <div 
         style={{...teamCardStyles.container, ...{opacity: this.state.opacity}}} 
         onClick={this.onHover} >
-        {columns}
+        <Fade>
+          {columns}
+        </Fade>
       </div>
     )
   }
