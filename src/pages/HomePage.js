@@ -94,14 +94,11 @@ export default class HomePage extends Component {
           ...styles.section2, 
           ...{ paddingLeft: '20vw', paddingRight: '20vw', paddingTop: '9vh', paddingBottom: '9vh'}
           }}>
-          <Fade>
-            <div style={styles.hcap}/>
-          </Fade>
-
           <Fade cascade bottom>
+            <div style={styles.hcap}/>
             <h1
               style={styles.title}>
-              {"The Lionfish Problem".toUpperCase()}
+              {"THE LIONFISH PROBLEM"}
             </h1>
 
 
@@ -117,9 +114,6 @@ export default class HomePage extends Component {
 
             <br/>
             <br/>
-          </Fade>
-
-          <Fade>
             <div style={{...styles.row, ...{ paddingLeft: '20vw', paddingRight: '20vw'}}}>
               <img src="/images/recreationalfishing-01.png" style={styles.logo} />
               <img src="/images/salesgauge-01.png" style={styles.logo} />
