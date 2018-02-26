@@ -365,11 +365,10 @@ position: fixed;
 .pan8 {
   position: absolute;
   height: 100%;
-  width: 140%;
+  width: 200%;
   z-index: -1;
   background-size: auto 160%;
   background-repeat: no-repeat;
-  animation: MOVE-BG 60s infinite linear;
   -webkit-animation-name: MOVE-BG;
   -webkit-animation-duration: 60s;
   -webkit-animation-timing-function: linear;
@@ -391,6 +390,16 @@ position: fixed;
   -webkit-animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+.still2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-size: auto 150%;
+  background-repeat: no-repeat;
+}
+
 
 .overlay {
   position: absolute;
@@ -444,7 +453,7 @@ position: fixed;
      -webkit-transform: translateX(0%);
    }
    to { 
-     -webkit-transform: translateX(-20%);
+     -webkit-transform: translateX(-10%);
    }
 }
 

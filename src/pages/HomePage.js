@@ -51,7 +51,7 @@ export default class HomePage extends Component {
         <Fade>
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
           <BackgroundImage 
-            pan={'pan7'}
+            pan={'pan8'}
             backgroundColor={Black(0.3)}
             background={'url(/images/erin-simmons-382355.jpg)'}
             contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.jumboContent}}>

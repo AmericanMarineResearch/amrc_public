@@ -44,7 +44,7 @@ export default class AboutPage extends Component {
         <Fade>
           <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
             <BackgroundImage 
-              pan={'pan7'}
+              pan={'pan8'}
               background={'url(/images/diver-diving-swimming-sea-71276.jpeg)'}
               contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
             </BackgroundImage>
@@ -62,7 +62,7 @@ export default class AboutPage extends Component {
 
         <BackgroundImage 
           background={'url(/images/pexels-photo-260551.jpeg)'}
-          pan={"still"}
+          pan={"still2"}
           contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
           <Fade bottom>
             <h2 style={styles.subtitle}>

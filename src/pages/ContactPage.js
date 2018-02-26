@@ -40,7 +40,7 @@ export default class ContactPage extends Component {
         <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
           
           <BackgroundImage 
-            pan={'pan7'}
+            pan={'pan8'}
             background={'url(/images/diver-diving-swimming-sea-71276.jpeg)'}
             contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
             <Fade bottom>
