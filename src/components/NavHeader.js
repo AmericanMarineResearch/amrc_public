@@ -25,7 +25,7 @@ export default class NavHeader extends Component {
   render() {
 
     return (
-      <div>
+      <div id="head">
         <Navbar style={styles.container} staticTop >
           <Navbar.Header>
             <Navbar.Brand>

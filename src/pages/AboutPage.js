@@ -27,6 +27,7 @@ import SlickSlider from 'react-slick'
 import { CarouselProvider, Dot, DotGroup, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import ScrollArea from 'react-scrollbar'
+import NavFooter from '../components/NavFooter.js'
 // import Carousel from 'react-flex-carousel'
 
 let __PEOPLE__ = require('../data/people.json')
@@ -54,7 +55,9 @@ class NextSectionCue extends Component {
           justifyContent: 'center',
           alignItems: 'center',
           display: 'flex',
-          paddingTop: 6
+          height: 55,
+          width: 55,
+          paddingTop: 0
         }}
         href={this.props.href}
         >
@@ -87,7 +90,7 @@ class NextSectionCueWhite extends Component {
           justifyContent: 'center',
           alignItems: 'center',
           display: 'flex',
-          paddingTop: 6
+          paddingTop: 0
         }}
         href={this.props.href}
         >
@@ -229,7 +232,7 @@ export default class AboutPage extends Component {
               }
           </Carousel>
         </div>
-
+        <NavFooter/>
         <Footer/>
       </div>
     );
@@ -747,7 +750,8 @@ const styles = {
     alignItems: 'center',
   },
   arrow: {
-    height: 60
+    height: 55,
+    width: 55,
   },
   center: {
     flex: 1,

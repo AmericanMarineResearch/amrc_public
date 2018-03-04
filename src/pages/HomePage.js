@@ -21,47 +21,18 @@ import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
 import FooterContactForm from '../components/FooterContactForm.js'
+import NavFooter from '../components/NavFooter.js'
 // var {SparkScroll, SparkProxy, sparkScrollFactory} =
 //   require('react-spark-scroll/spark-scroll-rekapi')({
 //     invalidateAutomatically: true
 //   });
+import NextSectionCue from '../components/NextSectionCue.js'
 import { Bounce, Zoom, Fade, Slide} from 'react-reveal';
 
 const dummySentences = ['Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 'Donec hendrerit tempor tellus.', 'Donec pretium posuere tellus.', 'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Nulla posuere.', 'Donec vitae dolor.', 'Nullam tristique diam non turpis.', 'Cras placerat accumsan nulla.', 'Nullam rutrum.', 'Nam vestibulum accumsan nisl.'];
 
 var text = "The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."
 
-class NextSectionCue extends Component {
-  render() {
-    return (  
-      <a 
-        class="box pulse-button"
-        style={{
-          flex: 0,
-          justifyContent: 'center',
-          alignItems: 'center',
-          display: 'flex',
-          paddingTop: 0
-        }}
-        href={this.props.href}
-        >
-        <img 
-          src={this.props.icon} 
-          style={styles.arrow} />
-      </a>
-    )
-  }
-}
-
-NextSectionCue.defaultProps = {
-  icon: '/images/whitearrow.png',
-  href: '#',
-  style: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: White(0)
-  }
-}
 
 class HoverBox extends Component {
   render() {
@@ -130,6 +101,7 @@ export default class HomePage extends Component {
 
                 }}>
                 <NextSectionCue
+                  config="whitedown"
                   href="#problem"
                   />
               </div>
@@ -337,7 +309,7 @@ export default class HomePage extends Component {
             </Slide>
           </div>
         </div>
-
+        <NavFooter/>
         <Footer/>
       </div>
     );
@@ -540,7 +512,8 @@ const styles = {
     alignItems: 'center',
   },
   arrow: {
-    height: 60
+    height: 55,
+    width: 55
   },
   center: {
     flex: 1,

@@ -19,6 +19,7 @@ import Footer from '../components/Footer.js'
 import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { White } from '../global/Colors.js'
+import NavFooter from '../components/NavFooter.js'
 const dummySentences = ['Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 'Donec hendrerit tempor tellus.', 'Donec pretium posuere tellus.', 'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'Nulla posuere.', 'Donec vitae dolor.', 'Nullam tristique diam non turpis.', 'Cras placerat accumsan nulla.', 'Nullam rutrum.', 'Nam vestibulum accumsan nisl.'];
 
 export default class ComingSoonPage extends Component {
@@ -46,6 +47,7 @@ export default class ComingSoonPage extends Component {
 
           </BackgroundImage>
         </Jumbotron>
+        <NavFooter/>
         <Footer/>
       </div>
     );

@@ -15,38 +15,59 @@ import {  Button,
         } from 'react-bootstrap';
 
 import { __COMPONENT_STYLES__ } from '../global/Styles.js'
+import NextSectionCue from './NextSectionCue.js'
+import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
 
 export default class Footer extends Component {
   render() {
     return (
-      <Jumbotron style={styles.jumbotron}>
-        <p style={{...styles.footerText, ...styles.bold}}>
-          {'AMRC - American Marine Research Company'}
-        </p>
-        <p style={styles.footerText}>
-          {'Pensacola, FL'}
-        </p>
-        <p style={styles.footerText}>
-          {'Copyright American Marine Research Company, LLC 2017'}
-        </p>
+      <div style={styles.container}>
+        <div style={{...styles.col, ...styles.left}}>
+          <p style={styles.footerText}>
+            {"© American Marine Research Company"}
+          </p>
+        </div>
+        <div style={{...styles.col, ...styles.center}}>
+          <NextSectionCue config="whiteup" href={"#head"} />
+        </div>
 
-      </Jumbotron>
+        <div style={styles.col}/>
+      </div>
     );
   }
 }
 
 const styles = {
-  jumbotron: {
-    marginBottom: -20,
+  container: {
+    marginBottom: 0,
     marginTop: 0,
+    backgroundColor: darkBlue(1),
     padding: 10,
-    justifyContent: 'center',
+    paddingLeft: 30,
+    paddingRight: 30,
+    display: 'flex',
+    flex: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItem: 'center,'
+  },
+  col: {
+    flex: 1,
+    display: 'flex',
+  },
+  left: {
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+  },
+  center: {
+    justifyContent: 'center'
   },
   bold: {
     fontWeight: 600
   },
   footerText: {
+    fontWeight: 400,
+    color: White(0.6),
     fontSize: 12,
     margin: 0
   }

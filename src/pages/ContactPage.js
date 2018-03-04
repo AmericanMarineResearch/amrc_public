@@ -21,6 +21,7 @@ import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
 import { Bounce, Zoom, Fade, Slide} from 'react-reveal';
+import NavFooter from '../components/NavFooter.js'
 
 let __PEOPLE__ = require('../data/people.json')
 
@@ -58,7 +59,7 @@ export default class ContactPage extends Component {
         </Jumbotron>
         </Fade>
 
-        
+        <NavFooter/>
 
         <Footer/>
       </div>
