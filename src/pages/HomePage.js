@@ -41,7 +41,7 @@ class NextSectionCue extends Component {
           justifyContent: 'center',
           alignItems: 'center',
           display: 'flex',
-          paddingTop: 6
+          paddingTop: 0
         }}
         href={this.props.href}
         >
