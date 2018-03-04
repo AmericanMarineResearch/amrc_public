@@ -44,6 +44,71 @@ var __SLIDER_SETTINGS__ = {
   slidesToScroll: 1
 };
 
+class NextSectionCue extends Component {
+  render() {
+    return (  
+      <a 
+        class="box pulse-button-dark-blue"
+        style={{
+          flex: 0,
+          justifyContent: 'center',
+          alignItems: 'center',
+          display: 'flex',
+          paddingTop: 6
+        }}
+        href={this.props.href}
+        >
+        <img 
+          src={this.props.icon} 
+          style={styles.arrow} />
+      </a>
+    )
+  }
+}
+
+NextSectionCue.defaultProps = {
+  icon: '/images/arrow.png',
+  href: '#',
+  style: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: White(0)
+  }
+}
+
+
+class NextSectionCueWhite extends Component {
+  render() {
+    return (  
+      <a 
+        class="box pulse-button"
+        style={{
+          flex: 0,
+          justifyContent: 'center',
+          alignItems: 'center',
+          display: 'flex',
+          paddingTop: 6
+        }}
+        href={this.props.href}
+        >
+        <img 
+          src={this.props.icon} 
+          style={styles.arrow} />
+      </a>
+    )
+  }
+}
+
+NextSectionCueWhite.defaultProps = {
+  icon: '/images/whitearrow.png',
+  href: '#',
+  style: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: White(0)
+  }
+}
+
 export default class AboutPage extends Component {
   constructor(props) {
     super(props)
@@ -76,12 +141,7 @@ export default class AboutPage extends Component {
             <h1 style={styles.bigTitle}>
               WHO WE ARE
             </h1>
-            <a 
-              href='#team'
-              onClick={() => console.log("Pressed")}>
-              <img 
-                src={'/images/arrow.png'} style={styles.arrow} />
-            </a>
+            <NextSectionCue href="#team" />
           </Fade>
         </div>
 
@@ -113,16 +173,26 @@ export default class AboutPage extends Component {
                       </SlideReveal>
               })
             }
-            
+          
+          <br/>
+          <br/>
+          <div style={styles.center}>
+            <NextSectionCueWhite href="#advisors" />
+          </div>
+          <br/>
+          <br/>
           </BackgroundImage>
+          
         </div>
 
-        <div style={{
-          flexDirection: 'center',
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: "column"
-        }}>
+        <div 
+          id="advisors"
+          style={{
+            flexDirection: 'center',
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: "column"
+          }}>
          <h2 style={{...styles.subtitle, ...{color: darkBlue(1)} }}>
             ADVISORS
           </h2>
@@ -131,7 +201,10 @@ export default class AboutPage extends Component {
 
 
 
-        <div style={styles.section5}>
+        <div style={styles.section5} >
+          <br/>
+          <br/>
+
           <Carousel
             style={{
               justifyContent: 'center',
@@ -164,7 +237,7 @@ export default class AboutPage extends Component {
 }
 
 
-let __ADVISOR_CARD_HEIGHT__ = '80vh'
+let __ADVISOR_CARD_HEIGHT__ = '65vh'
 
 class AdvisorCard extends Component {
   constructor(props) {
@@ -675,6 +748,12 @@ const styles = {
   },
   arrow: {
     height: 60
+  },
+  center: {
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 
 }

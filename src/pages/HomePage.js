@@ -31,6 +31,51 @@ const dummySentences = ['Lorem ipsum dolor sit amet, consectetuer adipiscing eli
 
 var text = "The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."
 
+class NextSectionCue extends Component {
+  render() {
+    return (  
+      <a 
+        class="box pulse-button"
+        style={{
+          flex: 0,
+          justifyContent: 'center',
+          alignItems: 'center',
+          display: 'flex',
+          paddingTop: 6
+        }}
+        href={this.props.href}
+        >
+        <img 
+          src={this.props.icon} 
+          style={styles.arrow} />
+      </a>
+    )
+  }
+}
+
+NextSectionCue.defaultProps = {
+  icon: '/images/whitearrow.png',
+  href: '#',
+  style: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: White(0)
+  }
+}
+
+class HoverBox extends Component {
+  render() {
+    return (  
+       <div 
+        class="box"
+        >
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
+
 export default class HomePage extends Component {
   constructor(props) {
     super(props)
@@ -80,9 +125,13 @@ export default class HomePage extends Component {
                   flex: 0, 
                   display: 'flex', 
                   justifyContent: 'center', 
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  paddingBottom: 25,
+
                 }}>
-                <img src={'/images/whitearrow.png'} style={styles.arrow} />
+                <NextSectionCue
+                  href="#problem"
+                  />
               </div>
             </Fade>
 
@@ -91,9 +140,10 @@ export default class HomePage extends Component {
         </Fade>
 
         <Fade cascade bottom>
-        <div style={{
-          ...styles.section2, 
-          ...{ paddingLeft: '20vw', paddingRight: '20vw', paddingTop: '9vh', paddingBottom: '9vh'}
+        <div id="problem"
+          style={{
+            ...styles.section2, 
+            ...{ paddingLeft: '20vw', paddingRight: '20vw', paddingTop: '9vh', paddingBottom: 15}
           }}>
 
             <div style={styles.hcap}/>
@@ -119,87 +169,111 @@ export default class HomePage extends Component {
               <img src="/images/recreationalfishing-01.png" style={styles.logo} />
               <img src="/images/salesgauge-01.png" style={styles.logo} />
             </div>
-
+            <NextSectionCue href='#smarter' style={{marginTop: 20}}/>
         </div>
         </Fade>
 
-        <div style={styles.section3}>
-          <Fade cascade bottom>
-            <div style={{...styles.column, ...{paddingLeft: '15vw'}}} >
-              
-              <div style={styles.hcap}/>
+        <div id="smarter" style={styles.section3}>
+          <div style={{
+            ...styles.row,
+            ...{ 
+              paddingTop: '9vh',
+              paddingBottom: 0,
+              alignItems: 'space-between'
+             } 
+            }}>
+            <Fade cascade bottom>
+              <div style={{...styles.column, ...{paddingLeft: '15vw'}}} >
+                
+                <div style={styles.hcap}/>
 
-              <h1 style={{...styles.title, ...styles.justifyLeft}}>
-                {"Working Smarter".toUpperCase()}
-              </h1>
-              
-              <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-                AMRC was founded out of the conviction that marine data and artificial intelligence could offer promising insights for controlling invasive species in an economically sustainable way. 
-              </p>
-              <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-                Our mission is to data-driven methods for lionfish control, using sophistiacted technologies from a wide range of domains to advance invasive species control research.
-              </p>
-              <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-                It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
-              </p>
+                <h1 style={{...styles.title, ...styles.justifyLeft}}>
+                  {"Working Smarter".toUpperCase()}
+                </h1>
+                
+                <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                  AMRC was founded out of the conviction that marine data and artificial intelligence could offer promising insights for controlling invasive species in an economically sustainable way. 
+                </p>
+                <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                  Our mission is to data-driven methods for lionfish control, using sophistiacted technologies from a wide range of domains to advance invasive species control research.
+                </p>
+                <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                  It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
+                </p>
 
-              
+                
+              </div>
+            </Fade>
+            <div 
+              style={{...styles.column, 
+                      ...{
+                        overflow: 'hidden',
+                        justifyContent: 'center'
+                      }}}>
+              <Slide right>
+                <img 
+                  src="/images/mathijs-vos-16905.jpg" 
+                  style={styles.lionfish} />
+              </Slide>
             </div>
-          </Fade>
-          <div 
-            style={{...styles.column, 
-                    ...{
-                      overflow: 'hidden',
-                      justifyContent: 'center'
-                    }}}>
-            <Slide right>
-              <img 
-                src="/images/mathijs-vos-16905.jpg" 
-                style={styles.lionfish} />
-            </Slide>
           </div>
+          <div style={styles.center}>
+            <NextSectionCue href='#grid'/>
+          </div>
+          <br/>
+          <br/>
+
+
         </div>
 
-        <div style={{...styles.section2, ...{justifyContent: 'center', height: '100vh'}}}>
+        <div 
+          id="grid" 
+          style={{...styles.section2, ...{justifyContent: 'center', height: '100vh'}}}>
           <BackgroundImage 
             background={'url(/images/waves-01.png)'}
             backgroundColor={darkBlue(0.6)}
             contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body2}}>
 
-            <div style={{
-              ...styles.row, 
-              ...{
-                  justifyContent: 'space-around', 
-                  alignItems: 'flex-end',
-                  height: '80vh', 
-                }}}>
+            <div>
+              <div style={{
+                ...styles.row, 
+                ...{
+                    justifyContent: 'space-around', 
+                    alignItems: 'flex-end',
+                    height: '80vh', 
+                  }}}>
 
-              <div style={styles.sinker}>
-                <div style={styles.smallCol}>
-                  <Slide left>
+                <div style={styles.sinker}>
+                  <div style={styles.smallCol}>
+                    <Slide left>
 
-                    <div style={{...styles.hcap, ...styles.hcapGreen}}/>
-                    <p style={styles.text}>
-                      The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
-                    </p>
-                  </Slide>
-                </div>
+                      <div style={{...styles.hcap, ...styles.hcapGreen}}/>
+                      <p style={styles.text}>
+                        The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
+                      </p>
+                    </Slide>
+                  </div>
 
-                <div style={styles.smallCol}>
-                  <Slide right>
-                    <div style={{...styles.hcap, ...styles.hcapBlue}}/>
-                    <p style={styles.text}>
-                      Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
-                    </p>
-                  </Slide>
+                  <div style={styles.smallCol}>
+                    <Slide right>
+                      <div style={{...styles.hcap, ...styles.hcapBlue}}/>
+                      <p style={styles.text}>
+                        Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
+                      </p>
+                    </Slide>
+                  </div>
                 </div>
               </div>
+              <div style={styles.center}>
+                <NextSectionCue href="#commit"/>
+              </div>
+
             </div>
 
           </BackgroundImage>
         </div>
 
-        <div style={styles.blueFooter}>
+        <div id="commit" style={styles.blueFooter}>
           <Fade bottom>
             <p style={{...styles.text, ...{fontWeight: 500}}}>
               We are currently focusing our research in Escambia County, Okaloosa County and Santa Rosa County, with the vision of tackling lionfish infestations plaguing the entire Gulf Coast and beyond.
@@ -320,19 +394,16 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
-
+    justifyContent: 'flex-start'
   },
   section3: {
     backgroundColor: Black(1),
     flex: 1,
     display: 'flex',
-    alignItems: 'space-between',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'flex-start',
+    alignItems: 'stretch',
     width: '100vw',
-    paddingTop: '9vh',
-    paddingBottom: '9vh'
   },  
   section4: {
     flex: 1,
@@ -470,6 +541,12 @@ const styles = {
   },
   arrow: {
     height: 60
+  },
+  center: {
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 }
 
