@@ -3,8 +3,10 @@ import logo from '../logo.svg';
 import '../App.css';
 
 import {  Button,
+          Carousel,
           Clearfix,
           Col, 
+          Glyphicon,
           Grid,
           Jumbotron,
           MenuItem,
@@ -20,9 +22,27 @@ import Footer from '../components/Footer.js'
 import { __COMPONENT_STYLES__, } from '../global/Styles.js'
 import BackgroundImage from '../components/BackgroundImage.js'
 import { Black, darkBlue, lightBlue, lightGreen, White } from '../global/Colors.js'
-import { Bounce, Zoom, Fade, Slide} from 'react-reveal';
+import { Bounce, Zoom, Fade, Slide as SlideReveal} from 'react-reveal';
+import SlickSlider from 'react-slick'
+import { CarouselProvider, Dot, DotGroup, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import ScrollArea from 'react-scrollbar'
+// import Carousel from 'react-flex-carousel'
 
 let __PEOPLE__ = require('../data/people.json')
+let __ADVISORS__ = require('../data/advisors.json')
+
+
+var __SLIDER_SETTINGS__ = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  autoplay: true,
+  vertical: false,
+  arrows: true,
+  slidesToScroll: 1
+};
 
 export default class AboutPage extends Component {
   constructor(props) {
@@ -56,45 +76,253 @@ export default class AboutPage extends Component {
             <h1 style={styles.bigTitle}>
               WHO WE ARE
             </h1>
-            <img src={'/images/arrow.png'} style={styles.arrow} />
+            <a 
+              href='#team'
+              onClick={() => console.log("Pressed")}>
+              <img 
+                src={'/images/arrow.png'} style={styles.arrow} />
+            </a>
           </Fade>
         </div>
 
-        <BackgroundImage 
-          background={'url(/images/pexels-photo-260551.jpeg)'}
-          pan={"still2"}
-          contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
-          <Fade bottom>
-            <h2 style={styles.subtitle}>
-              THE TEAM
-            </h2>
-            <div style={styles.hcap}/>
-          </Fade>
+        <div id="team">
+          <BackgroundImage 
+            background={'url(/images/pexels-photo-260551.jpeg)'}
+            pan={"still2"}
+            contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body}}>
+            <Fade bottom>
+              <h2 style={styles.subtitle}>
+                THE TEAM
+              </h2>
+              <div style={styles.hcap}/>
+            </Fade>
 
-          {
-          __PEOPLE__.map((item, index) => {
-            return  <Slide 
-                      key={index} 
-                      left={index % 2 == 0} 
-                      right={index % 2 == 1}>
-                      <TeamMemberCard
-                        name={item.name}
-                        title={item.title}
-                        image={item.headshot}
-                        bio={item.bio}
-                        arrangement={index % 2}
-                      />
-                    </Slide>
-            })
-          }
-          
-        </BackgroundImage>
+            {
+            __PEOPLE__.map((item, index) => {
+              return  <SlideReveal 
+                        key={index} 
+                        left={index % 2 == 0} 
+                        right={index % 2 == 1}>
+                        <TeamMemberCard
+                          name={item.name}
+                          title={item.title}
+                          image={item.headshot}
+                          bio={item.bio}
+                          arrangement={index % 2}
+                        />
+                      </SlideReveal>
+              })
+            }
+            
+          </BackgroundImage>
+        </div>
+
+        <div style={{
+          flexDirection: 'center',
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: "column"
+        }}>
+         <h2 style={{...styles.subtitle, ...{color: darkBlue(1)} }}>
+            ADVISORS
+          </h2>
+          <div style={{...styles.hcap, ...{backgroundColor: darkBlue(1)} }}/>
+        </div>
+
+
+
+        <div style={styles.section5}>
+          <Carousel
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+            nextIcon={
+              <img src={'images/rightarrow.png'} style={styles.smallArrow}/>
+            }
+            prevIcon={
+              <img src={'images/left_arrow.png'} style={styles.smallArrow}/>
+            }
+
+            indicators={false}
+            controls={true}
+            >
+              { 
+                __ADVISORS__.map((item, index) => 
+                  <Carousel.Item key={index} >
+                    <AdvisorCard {...item} />
+                  </Carousel.Item>
+                )
+              }
+          </Carousel>
+        </div>
+
         <Footer/>
       </div>
     );
   }
 }
 
+
+let __ADVISOR_CARD_HEIGHT__ = '80vh'
+
+class AdvisorCard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      opacity: Math.random()
+    }
+    autobind(this)
+  }
+
+  onHover() {
+  }
+
+
+  renderHeadshotColumn() {
+    if (false) {
+      return (
+        <div  
+        key={'headshot'}
+        style={
+            { ...advisorCardStyles.col,  
+              ...{
+                flex: 1
+              }
+            }
+          }>
+        <img src={this.props.headshot} style={advisorCardStyles.headshot} />
+
+      </div>
+
+      )
+    }
+
+    return (
+      <div  
+        key={'headshot'}
+        style={
+            { ...advisorCardStyles.col,  
+              ...{
+                maxHeight: __ADVISOR_CARD_HEIGHT__,
+                backgroundImage: 'url(' + this.props.headshot + ')',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: '50% 50%',
+              }
+            }
+          }>
+
+      </div>
+    )
+  }
+
+  renderBioColumn() {
+
+    return (
+      <div 
+        key={'bio'}
+        style={{
+          ...advisorCardStyles.col, 
+          ...{
+            backgroundColor: White(1),
+            paddingBottom: 20,
+            paddingLeft: 20,
+            paddingRight: 20,
+            flex: 1,
+            display: 'flex'
+          }
+        }}>
+
+        <div style={{...styles.hcap, ...{backgroundColor: lightGreen(1)}}}/>
+        <h3 style={advisorCardStyles.name}>
+          {this.props.name}
+        </h3>
+        <h4 style={advisorCardStyles.position}>
+          {this.props.title}
+        </h4>
+        <br/>
+        <ScrollArea 
+          stopScrollPropagation={true}
+          style={{maxHeight: '70vh', paddingRight: 15,}}>
+        
+          <p style={advisorCardStyles.bio}>
+            {this.props.bio}
+          </p>
+        </ScrollArea>
+      </div>
+    )
+  }
+
+  render() {
+    var columns = [this.renderHeadshotColumn(), this.renderBioColumn(), ]
+    
+    if (false) {
+      return (
+        <img 
+          style={{heigth: 400, width: 400}}
+          src={"/images/amrc-01.png"}/>
+      )
+    }
+
+    return (
+      <div style={advisorCardStyles.container}>
+        {columns}
+      </div>
+    )
+  }
+}
+
+AdvisorCard.defaultProps = {
+  image: '/images/amrc-01.png',
+  name: "STEVE GITTINGS, PhD",
+  position: "Chief Scientist, NOAA of National Marine Sanctuaries",
+  bio: "Steve is rad",
+  arrangement: 0
+}
+
+const advisorCardStyles = {
+  container: {
+    flex: 1,
+    display: 'flex',
+    minHeight: __ADVISOR_CARD_HEIGHT__,
+    alignItems: 'flex',
+    maxHeight: __ADVISOR_CARD_HEIGHT__,
+    paddingLeft: 100,
+    paddingRight: 100,
+    margin: 2,
+  },
+  col: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column'
+  },
+  bio: {
+    color: Black(0.6),
+    fontSize: 14,
+    textAlign: 'start',
+    textOverflow: 'hidden'
+  },
+  name: {
+    marginTop: 8,
+    fontSize: 24,
+    letterSpacing: '1.2px',
+    fontWeight: 600,
+    textAlign: 'start',
+    color: lightGreen(1),
+    marginBottom: -2,
+  },
+  headshot: {
+
+  },
+  position: {
+    fontSize: 18,
+    letterSpacing: '1px',
+    fontWeight: 400,
+    textAlign: 'start',
+    color: Black(0.6)
+  },
+}
 
 class TeamMemberCard extends Component {
   constructor(props) {
@@ -114,7 +342,7 @@ class TeamMemberCard extends Component {
   renderHeadshotColumn() {
     return (
       <div  
-        key={0}
+        key={'headshot'}
         style={
             { ...teamCardStyles.col,  
               ...{
@@ -133,7 +361,7 @@ class TeamMemberCard extends Component {
   renderNameColumn() {
     return (
       <div  
-        key={1}
+        key={'name'}
         style={{...teamCardStyles.col2, ...teamCardStyles.column}}>
         <div style={teamCardStyles.blueCap} />
         <h3 style={teamCardStyles.name}>
@@ -149,7 +377,7 @@ class TeamMemberCard extends Component {
   renderBioColumn() {
     return (
       <div 
-        key={2}
+        key={'bio'}
         style={{...teamCardStyles.col3, ...teamCardStyles.column}}>
         <p style={teamCardStyles.bio}>
           {this.props.bio}
@@ -323,6 +551,20 @@ const styles = {
     paddingLeft: '15vw',
     paddingRight: '15vw'
   },
+  section5: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: White(1),
+    justifyContent: 'flex-start',
+    width: '100vw',
+    paddingTop: '3vh',
+    paddingBottom: '6vh',
+    paddingLeft: '10vw',
+    paddingRight: '10vw'
+  },
+  smallArrow: {
+    height: 60,
+  },
   text: {
     color: White(0.8),
     fontSize: 14,
@@ -372,13 +614,13 @@ const styles = {
     margin: 20,
   },
   hcap: {
-    marginTop: 5,
+    marginTop: 0,
     minWidth: 88,
     minHeight: 5,
+    maxWidth: 88,
+    maxHeight: 5,
     flex: 1,
-    display: 'flex',
     backgroundColor: White(1),
-    marginBottom: 20,
   },
   hcapGreen: {
     backgroundColor: 'r(63, 151, 142, 1)'
