@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 
-import {  Button,
-          Clearfix,
-          Col, 
-          Grid,
-          Jumbotron,
-          MenuItem,
-          Nav,
-          NavDropdown,
-          NavItem,
-          Navbar, 
-          Row } from 'react-bootstrap';
+import {  
+  Button,
+  Clearfix,
+  Col, 
+  Grid,
+  Jumbotron,
+  MenuItem,
+  Nav,
+  NavDropdown,
+  NavItem,
+  Navbar, 
+  Row } from 'react-bootstrap';
 
 import autobind from 'react-autobind'
 import NavHeader from '../components/NavHeader.js'
@@ -77,29 +78,23 @@ export default class HomePage extends Component {
                 style={{
                   flex: 1, 
                   display: 'flex', 
-                  justifyContent: 'center', 
+                  justifyContent: 'space-between', 
                   flexDirection: 'column',
                   alignItems: 'flex-start',
-                  paddingLeft: '5vw',
+                  paddingLeft: 8,
                   paddingRight: '20vw',
                 }}>
+                <div style={{paddingTop: '10vh', marginBottom: 20}}>
+                  <p style={styles.bigTitle}>
+                    {"Innovations for Healthy Oceans".toUpperCase()}
+                  </p>
 
-                <p style={styles.bigTitle}>
-                  {"Innovations for Healthy Oceans".toUpperCase()}
-                </p>
-
-                <div style={styles.hcap}/>
+                  <div style={styles.hcap}/>
+                </div>
               </div>
 
               <div 
-                style={{
-                  flex: 0, 
-                  display: 'flex', 
-                  justifyContent: 'center', 
-                  alignItems: 'center',
-                  paddingBottom: 25,
-
-                }}>
+                style={styles.center}>
                 <NextSectionCue
                   config="whitedown"
                   href="#problem"
@@ -115,32 +110,43 @@ export default class HomePage extends Component {
         <div id="problem"
           style={{
             ...styles.section2, 
-            ...{ paddingLeft: '20vw', paddingRight: '20vw', paddingTop: '9vh', paddingBottom: 15}
+            ...{ paddingTop: '9vh', paddingBottom: '5em'}
           }}>
 
+            
             <div style={styles.hcap}/>
             <h1
               style={styles.title}>
               {"THE LIONFISH PROBLEM "}
             </h1>
 
+            <div style={{paddingLeft: '20vw', paddingRight: '20vw'}}>
+              <p style={styles.textLighter}>
+                {"The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."}  
+              </p>
+              <p style={styles.textLighter}>
+                Alarmingly, the only form of lionfish control that exists today is hunting in shallow water by human divers, but it is too limited by logistical and economic constraints to realistically offer a lasting solution to this problem.
+              </p>
+              <p style={styles.textLighter}>
+                The lionfish invasion is a particularly concerning threat to Western Florida, as marine resources are critical to the region’s economic health: according to the NOAA, recreational fishing generated ~70,109 jobs and $7.5 billion in sales impacts in West Florida in 2014 alone.
+              </p>
 
-            <p style={styles.textLighter}>
-              {"The invasion of lionfish risks devastating marine life and coral ecosystems in the Atlantic and was named one of the top 15 threats to global diversity. They are decimating local reefs and consuming native species of fish: leading studies show lionfish invasion is responsible for reducing native species recruitment on occupied sites by nearly 80% and reducing overall native species biomass by over 60%."}  
-            </p>
-            <p style={styles.textLighter}>
-              Alarmingly, the only form of lionfish control that exists today is hunting in shallow water by human divers, but it is too limited by logistical and economic constraints to realistically offer a lasting solution to this problem.
-            </p>
-            <p style={styles.textLighter}>
-              The lionfish invasion is a particularly concerning threat to Western Florida, as marine resources are critical to the region’s economic health: according to the NOAA, recreational fishing generated ~70,109 jobs and $7.5 billion in sales impacts in West Florida in 2014 alone.
-            </p>
-
-            <br/>
-            <br/>
-            <div style={{...styles.row, ...{ paddingLeft: '20vw', paddingRight: '20vw'}}}>
-              <img src="/images/recreationalfishing-01.png" style={styles.logo} />
-              <img src="/images/salesgauge-01.png" style={styles.logo} />
+              <br/>
+              <br/>
             </div>
+
+            <Grid style={{...styles.row, ...{ paddingLeft: '5vw', paddingRight: '5vw', paddingBottom: '2em'}}}>
+              <Row> 
+                <Col sm={6} md={6} style={styles.col}>
+                  <img src="/images/recreationalfishing-01.png" style={styles.logo} />
+                </Col>
+                <Col sm={6} md={6} style={styles.col}>
+                  <img src="/images/salesgauge-01.png" style={styles.logo} />
+                </Col>
+
+              </Row>
+            </Grid>
+            
             <NextSectionCue href='#smarter' style={{marginTop: 20}}/>
         </div>
         </Fade>
@@ -151,51 +157,57 @@ export default class HomePage extends Component {
             ...{ 
               paddingTop: '9vh',
               paddingBottom: 0,
+              paddingLeft: '10vw',
+              width: '90vw',
               alignItems: 'space-between'
              } 
             }}>
             <Fade cascade bottom>
-              <div style={{...styles.column, ...{paddingLeft: '15vw'}}} >
-                
-                <div style={styles.hcap}/>
+              <Grid>
+                <Row className="show-grid">
+                  <Col 
+                    sm={6} md={6}
+                    >
+                    
+                    <div style={styles.hcap}/>
 
-                <h1 style={{...styles.title, ...styles.justifyLeft}}>
-                  {"Working Smarter".toUpperCase()}
-                </h1>
-                
-                <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-                  AMRC was founded out of the conviction that marine data and artificial intelligence could offer promising insights for controlling invasive species in an economically sustainable way. 
-                </p>
-                <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-                  Our mission is to data-driven methods for lionfish control, using sophistiacted technologies from a wide range of domains to advance invasive species control research.
-                </p>
-                <p style={{...styles.textLighter, ...styles.justifyLeft}}>
-                  It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
-                </p>
+                    <h1 style={{...styles.title, ...styles.justifyLeft}}>
+                      {"WORKING SMARTER"}
+                    </h1>
+                    
+                    <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                      AMRC was founded out of the conviction that marine data and artificial intelligence could offer promising insights for controlling invasive species in an economically sustainable way. 
+                    </p>
+                    <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                      Our mission is to data-driven methods for lionfish control, using sophistiacted technologies from a wide range of domains to advance invasive species control research.
+                    </p>
+                    <p style={{...styles.textLighter, ...styles.justifyLeft}}>
+                      It was borne out of the observation that the fishing community suffers from insufficient coordination and lack of trust among peers. Our data and softare driven solutions seek to change that.
+                    </p>
+                    
+                  </Col>
+                  <Col 
+                    sm={6} md={6}
+                    style={{
+                            ...{
 
-                
-              </div>
+                              justifyContent: 'center'
+                            }}}>
+                    <Slide right>
+                      <img 
+                        src="/images/mathijs-vos-16905.jpg" 
+                        style={styles.lionfish} />
+                    </Slide>
+                  </Col>
+                </Row>
+              </Grid>
             </Fade>
-            <div 
-              style={{...styles.column, 
-                      ...{
-                        overflow: 'hidden',
-                        justifyContent: 'center'
-                      }}}>
-              <Slide right>
-                <img 
-                  src="/images/mathijs-vos-16905.jpg" 
-                  style={styles.lionfish} />
-              </Slide>
-            </div>
           </div>
           <div style={styles.center}>
             <NextSectionCue href='#grid'/>
           </div>
           <br/>
           <br/>
-
-
         </div>
 
         <div 
@@ -205,41 +217,34 @@ export default class HomePage extends Component {
             background={'url(/images/waves-01.png)'}
             backgroundColor={darkBlue(0.6)}
             contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body2}}>
+            
 
-            <div>
-              <div style={{
-                ...styles.row, 
-                ...{
-                    justifyContent: 'space-around', 
-                    alignItems: 'flex-end',
-                    height: '80vh', 
-                  }}}>
+            <Grid >           
+              <Row style={styles.sinker}>
 
-                <div style={styles.sinker}>
-                  <div style={styles.smallCol}>
-                    <Slide left>
+                <Col sm={6} md={6} style={styles.smallCol}>
+                  <Slide left>
 
-                      <div style={{...styles.hcap, ...styles.hcapGreen}}/>
-                      <p style={styles.text}>
-                        The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
-                      </p>
-                    </Slide>
-                  </div>
+                    <div style={{...styles.hcap, ...styles.hcapGreen}}/>
+                    <p style={styles.text}>
+                      The potential economic impact of lionfish threatens the charter boating, commercial fishing, tourism, and seafood wholesale industries. Charter fishing along generates over $14 billion in economic activity for western Florida.
+                    </p>
+                  </Slide>
+                </Col>
 
-                  <div style={styles.smallCol}>
-                    <Slide right>
-                      <div style={{...styles.hcap, ...styles.hcapBlue}}/>
-                      <p style={styles.text}>
-                        Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
-                      </p>
-                    </Slide>
-                  </div>
-                </div>
-              </div>
-              <div style={styles.center}>
-                <NextSectionCue href="#commit"/>
-              </div>
+                <Col sm={6} md={6} style={styles.smallCol}>
+                  <Slide right>
+                    <div style={{...styles.hcap, ...styles.hcapBlue}}/>
+                    <p style={styles.text}>
+                      Assuming that each lionfish consumes an ounce of biomass (flounder, red snapper etc.) daily, and each pound of biomass is conservatively worth $3 to the commercial charter boat industry, each lionfish removal could result in $70 of conserved commercially harvestable biomass.
+                    </p>
+                  </Slide>
+                </Col>
+              </Row>
+            </Grid>
 
+            <div style={styles.center}>
+              <NextSectionCue href="#commit"/>
             </div>
 
           </BackgroundImage>
@@ -257,7 +262,7 @@ export default class HomePage extends Component {
           <Fade bottom>
             <img src="/images/handshake.png" style={styles.handshake} />
             <h2 style={{...styles.textBlack, ...styles.title, ...{color: lightBlue(1)}}}>
-              {"Our Commitment".toUpperCase()}
+              OUR COMMITMENT
             </h2>
           </Fade>
           <br/>
@@ -273,7 +278,7 @@ export default class HomePage extends Component {
               <div style={styles.medCol}>
               
                 <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
-                  {"Environmental Responsibility".toUpperCase()}
+                  ENVIRONMENTAL RESPONSIBILITY
                 </h2>
                 <p style={{...styles.textBlack, ...styles.justifyLeft}}>
                   To ensure the responsible use of our technology, for purposes that best protect and preserve the long-term health of the natural environment.
@@ -293,7 +298,7 @@ export default class HomePage extends Component {
               <div style={{...styles.medCol, ...{borderColor: Black(0.6), borderLeftWidth: 1}}}>
               
                 <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
-                  {"Economic development".toUpperCase()}
+                  ECONOMIC DEVELOPMENT
                 </h2>
                 <p style={{...styles.textBlack, ...styles.justifyLeft}}>
                   To employ local Floridians and providing them with training and experience to develop into highly skilled talent, as demonstrated by the fact that half our team consists of proud Pensacola locals.
@@ -317,17 +322,6 @@ export default class HomePage extends Component {
 }
 
 
-// <Grid>
-//   <Row className="show-grid">
-//    <Col sm={6} md={3}><h3>Content Title</h3><br />{dummySentences.slice(0, 6).join(' ')}</Col>
-//    <Col sm={6} md={3}><h3>Content Title</h3><br />{dummySentences.slice(0, 4).join(' ')}</Col>
-//    <Clearfix visibleSmBlock><code>&lt;{'Clearfix visibleSmBlock'} /&gt;</code></Clearfix>
-//     <Col sm={6} md={3}><h3>Content Title</h3><br />{dummySentences.slice(0, 6).join(' ')}</Col>
-//     <Col sm={6} md={3}><h3>Content Title</h3><br />{dummySentences.slice(0, 2).join(' ')}</Col>
-//   </Row>
-// </Grid>
-
-
 const styles = {
   jumbotron: {
     height: '105vh',
@@ -340,7 +334,7 @@ const styles = {
     alignItems: 'stretch',
     flex: 1,
     display: 'flex',
-    paddingTop: '10vh',
+    paddingTop: '30vh',
     paddingBottom: 40,
   },
   vline: {
@@ -366,7 +360,8 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    width: '100vw'
   },
   section3: {
     backgroundColor: Black(1),
@@ -406,7 +401,7 @@ const styles = {
   },
   bigTitle: {
     wordBreak: 'keep-all',
-    fontSize: 80,
+    fontSize: '10vw',
     color: White(1),
     letterSpacing: '110%',
     fontWeight: 600,
@@ -416,6 +411,7 @@ const styles = {
   },
   title: {
     wordBreak: 'keep-all',
+    overflowWrap: 'normal',
     fontSize: 30,
     color: White(1),
     letterSpacing: '2px',
@@ -433,7 +429,8 @@ const styles = {
     textAlign: 'start'
   },
   logo: {
-    height: '40vh',
+    margin: '3vw',
+    width: '90%',
   },
   handshake: {
     height: 70,
@@ -479,8 +476,7 @@ const styles = {
     flexDirection: 'column',
     flex: 1,
     display: 'flex',
-    width: '30vw',
-    margin: '3vw',
+    padding: '3vw',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
@@ -493,7 +489,12 @@ const styles = {
   },
   lionfish: {
     flex: 1,
-    width: '55vw'
+    width: '55vw',
+    marginTop: '2vh',
+    marginBottom: 40
+  },
+  col: {
+
   },
   row: {
     display: 'flex',
@@ -516,8 +517,9 @@ const styles = {
     width: 55
   },
   center: {
-    flex: 1,
+    flex: 0,
     display: 'flex',
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   }

@@ -4299,7 +4299,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 11px 15px;
   font-size: 17px;
   line-height: 18px;
-  height: 40px;
+  height: 60px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4344,14 +4344,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
-  margin: 5.5px -15px;
+  margin: 5.5px 18px;
 }
 .navbar-nav > li > a {
-  padding-top: 50px;
-  padding-bottom: 30px;
-  line-height: 18px;
+  text-align: start;
+  padding-left: 5px;
+  line-height: 5px;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
@@ -4383,8 +4383,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: px;
+    padding-bottom: px;
   }
 }
 .navbar-form {

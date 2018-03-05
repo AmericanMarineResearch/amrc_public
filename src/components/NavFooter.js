@@ -146,7 +146,7 @@ const styles = {
     alignItems: 'flex-end'
   },
   logo: {
-    height: 120,
+    width: '80%',
   },
   a: {
     textDecoration: 'none'
