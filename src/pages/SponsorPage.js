@@ -89,7 +89,9 @@ export default class SponsorPage extends Component {
         <Fade>
           <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
             <BackgroundImage 
-              pan={'pan8'}    
+              pan={'pan8'}   
+              backgroundColor={Black(0.4)}
+              background={'url(images/naomi-tamar-323716.jpg)'} 
               contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.jumboContent}}>
 
               <Fade bottom cascade>
@@ -203,7 +205,7 @@ const styles = {
     wordBreak: 'keep-all',
     fontSize: '8vw',
     color: White(1),
-    letterSpacing: '120%',
+    letterSpacing: '0.7vw',
     fontWeight: 600,
     marginBottom: 10,
     textAlign: 'start',

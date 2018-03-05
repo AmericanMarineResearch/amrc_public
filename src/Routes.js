@@ -20,6 +20,8 @@ import FisheriesPage from './pages/FisheriesPage.js'
 import MissionPage from './pages/MissionPage.js'
 import ComingSoonPage from './pages/ComingSoonPage.js'
 import AboutPage from './pages/AboutPage.js'
+import ResearchPage from './pages/ResearchPage.js'
+
 //import TeamPage from ''
 
 let __DEV__ = true
@@ -47,7 +49,7 @@ class Routes extends React.Component {
           <Route path="/home/"            component={HomePage} />
           <Route path="/team/"            component={TeamPage} />
           <Route path="/about/"            component={AboutPage} />
-          <Route path="/research/"            component={ComingSoonPage} />
+          <Route path="/research/"            component={ResearchPage} />
           <Route path="/careers/"            component={CareersPage} />
           <Route path="/contact/"            component={ContactPage} />
           <Route path="/sponsor/"            component={SponsorPage} />

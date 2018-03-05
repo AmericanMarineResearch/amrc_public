@@ -15,6 +15,7 @@ export default class BackgroundImage extends Component {
     if (true) {
       return (
         <div 
+          id={this.props.id}
           style={{
             display: 'flex',
             flex: 1,

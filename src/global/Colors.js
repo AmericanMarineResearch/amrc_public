@@ -21,6 +21,10 @@ export function lightBlue(opacity) {
    	return 'rgba(20, 148, 201, ' + String(opacity)  + ')'
 }	
 
+export function lightRed(opacity) {
+   	return 'rgba(255, 115, 115, ' + String(opacity)  + ')'
+}
+
 export function darkBlue(opacity) {
 	return 'rgba(28, 51, 92, ' + String(opacity)  + ')'
 }
