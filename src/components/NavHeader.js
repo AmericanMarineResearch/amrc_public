@@ -55,7 +55,7 @@ export default class NavHeader extends Component {
               style={styles.menuitem} 
               eventKey={6} 
               href="sponsor">
-              SPONSORS & ENDORSEMENTS
+              SPONSORS
             </NavItem>
             <NavItem 
               active={this.props.activeKey == 'contact' ? true : false} 

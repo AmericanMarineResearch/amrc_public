@@ -147,7 +147,7 @@ const styles = {
     marginTop: 30,
   },
   bigTitle: {
-    fontSize: 60,
+    fontSize: '10vw',
     letterSpacing: '5px',
     fontWeight: 850,
     color: White(1)
