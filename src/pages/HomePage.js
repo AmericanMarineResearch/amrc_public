@@ -137,10 +137,10 @@ export default class HomePage extends Component {
 
             <Grid style={{...styles.row, ...{ paddingLeft: '5vw', paddingRight: '5vw', paddingBottom: '2em'}}}>
               <Row> 
-                <Col sm={6} md={6} style={styles.col}>
+                <Col sm={6} md={6}>
                   <img src="/images/recreationalfishing-01.png" style={styles.logo} />
                 </Col>
-                <Col sm={6} md={6} style={styles.col}>
+                <Col sm={6} md={6}>
                   <img src="/images/salesgauge-01.png" style={styles.logo} />
                 </Col>
 
@@ -167,6 +167,7 @@ export default class HomePage extends Component {
                 <Row className="show-grid">
                   <Col 
                     sm={6} md={6}
+                    style={styles.col}
                     >
                     
                     <div style={styles.hcap}/>
@@ -217,10 +218,8 @@ export default class HomePage extends Component {
             background={'url(/images/waves-01.png)'}
             backgroundColor={darkBlue(0.6)}
             contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.body2}}>
-            
-
-            <Grid >           
-              <Row style={styles.sinker}>
+            <Grid>           
+              <Row className="show-grid">
 
                 <Col sm={6} md={6} style={styles.smallCol}>
                   <Slide left>
@@ -242,10 +241,12 @@ export default class HomePage extends Component {
                 </Col>
               </Row>
             </Grid>
-
+            <br/>
+            <br/>
             <div style={styles.center}>
               <NextSectionCue href="#commit"/>
             </div>
+            <br/>
 
           </BackgroundImage>
         </div>
@@ -274,44 +275,51 @@ export default class HomePage extends Component {
                   flex: 1,
                   display: 'flex',
                 }}}>
-            <Slide cascade left>
-              <div style={styles.medCol}>
-              
-                <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
-                  ENVIRONMENTAL RESPONSIBILITY
-                </h2>
-                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                  To ensure the responsible use of our technology, for purposes that best protect and preserve the long-term health of the natural environment.
-                </p>
-                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                  To partner with non-profits and the academic community in tackling the major environmental problems plaguing the area.
-                </p>
-                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                  To remain transparent with our actions and accountable to the local community.
-                </p>
-              
-              </div>
-            </Slide>
+            <Grid>           
+              <Row className="show-grid">
 
-            <div style={styles.vline}/>
-            <Slide cascade right>
-              <div style={{...styles.medCol, ...{borderColor: Black(0.6), borderLeftWidth: 1}}}>
-              
-                <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
-                  ECONOMIC DEVELOPMENT
-                </h2>
-                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                  To employ local Floridians and providing them with training and experience to develop into highly skilled talent, as demonstrated by the fact that half our team consists of proud Pensacola locals.
-                </p>
-                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                  To invest in high school and university students by providing educational opportunities to learn about and work in marine biology, data science, and business, as well as mentorship to budding entrepreneurs.
-                </p>
-                <p style={{...styles.textBlack, ...styles.justifyLeft}}>
-                  To work with local fishing and charter boat communities in improving the quality of fish stocks.
-                </p>
-             
-              </div>
-            </Slide>
+                <Col sm={6} md={6} style={styles.smallCol}>
+                  <Slide cascade left>
+                    <div style={styles.medCol}>
+                    
+                      <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
+                        ENVIRONMENTAL RESPONSIBILITY
+                      </h2>
+                      <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                        To ensure the responsible use of our technology, for purposes that best protect and preserve the long-term health of the natural environment.
+                      </p>
+                      <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                        To partner with non-profits and the academic community in tackling the major environmental problems plaguing the area.
+                      </p>
+                      <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                        To remain transparent with our actions and accountable to the local community.
+                      </p>
+                    
+                    </div>
+                  </Slide>
+                </Col>
+                <Col sm={6} md={6} style={styles.smallCol}>
+                  <Slide cascade right>
+                    <div style={{...styles.medCol, ...{borderColor: Black(0.6), borderLeftWidth: 1}}}>
+                    
+                      <h2 style={{...styles.subtitle, ...styles.justifyLeft}}>
+                        ECONOMIC DEVELOPMENT
+                      </h2>
+                      <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                        To employ local Floridians and providing them with training and experience to develop into highly skilled talent, as demonstrated by the fact that half our team consists of proud Pensacola locals.
+                      </p>
+                      <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                        To invest in high school and university students by providing educational opportunities to learn about and work in marine biology, data science, and business, as well as mentorship to budding entrepreneurs.
+                      </p>
+                      <p style={{...styles.textBlack, ...styles.justifyLeft}}>
+                        To work with local fishing and charter boat communities in improving the quality of fish stocks.
+                      </p>
+                   
+                    </div>
+                  </Slide>
+                </Col>
+              </Row>
+            </Grid>
           </div>
         </div>
         <NavFooter/>
@@ -483,7 +491,8 @@ const styles = {
   medCol: {
     flexDirection: 'column',
     flex: 1,
-    margin: '3vw',
+    marginLeft: '3vw',
+    marginRight: '3vw',
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
@@ -494,7 +503,7 @@ const styles = {
     marginBottom: 40
   },
   col: {
-
+    paddingLeft: '5vw',
   },
   row: {
     display: 'flex',
@@ -509,8 +518,9 @@ const styles = {
     alignItems: 'center',
   },
   body2: {
-    justifyContent: 'center',
+    paddingBottom: 55,
     alignItems: 'center',
+    width: '100vw'
   },
   arrow: {
     height: 55,
