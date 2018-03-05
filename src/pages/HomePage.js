@@ -115,6 +115,7 @@ export default class HomePage extends Component {
 
             
             <div style={styles.hcap}/>
+            <br/>
             <h1
               style={styles.title}>
               {"THE LIONFISH PROBLEM "}
@@ -171,7 +172,7 @@ export default class HomePage extends Component {
                     >
                     
                     <div style={styles.hcap}/>
-
+                    <br/>
                     <h1 style={{...styles.title, ...styles.justifyLeft}}>
                       {"WORKING SMARTER"}
                     </h1>
