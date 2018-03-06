@@ -142,10 +142,12 @@ const styles = {
     alignItems: 'flex-start',
   },
   right: {
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    paddingLeft: '5vw',
+    paddingRight: '5vw',
   },
   logo: {
-    width: '80%',
+    width: '100%',
   },
   a: {
     textDecoration: 'none'
