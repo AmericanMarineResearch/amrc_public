@@ -198,7 +198,7 @@ export default class FishSim extends Component {
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightGreen(1)}}}>
                   {"Protected Reefs: 30%".toUpperCase()}
                 </h5>
-
+                <br/>
 
               </SlideReveal>
 
@@ -257,8 +257,7 @@ export default class FishSim extends Component {
           </Row>
         </Grid>
         
-        <br/>
-        <br/>
+
         <br/>
         <div
           id="simchart"
