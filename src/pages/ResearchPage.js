@@ -184,7 +184,7 @@ export default class ResearchPage extends Component {
                   }}>
                   <FishSimChart 
                     data={seriesSlice(__COD_SERIES__, 1960, 1998)}
-                    keys={['abundance', 'recruits']}/>
+                    keys={['landings', 'recruits']}/>
                 </div>
               </Col>
               <Col sm={6} md={6} style={{...styles.col, ...{paddingRight: '10vw',}}}>
