@@ -86,12 +86,12 @@ export default class CodChart extends Component {
     }
 
     return (
-
+      
         <ResponsiveContainer 
           minWidth={'100%'}
           minHeight={this.props.minHeight}
           debounce={1}
-          style={{margin: 0, padding: 0}}
+          style={{margin: 0, padding: 0, }}
           width="100%">
           <ComposedChart 
             data={this.props.data} 

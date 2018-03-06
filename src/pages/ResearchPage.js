@@ -32,6 +32,7 @@ import NavFooter from '../components/NavFooter.js'
 import { Bounce, Zoom, Fade, Slide as SlideReveal} from 'react-reveal';
 import NextSectionCue from '../components/NextSectionCue.js'
 import HBar from '../components/HBar.js'
+import FishSimChart from '../components/FishSimChart.js';
 
 import { LineChart, 
   Line, 
@@ -68,50 +69,44 @@ function seriesSlice(series, start, end) {
   return outSeries
 }
 
-
-
-
 export default class ResearchPage extends Component {
   render() {
-    console.log(__COD_SERIES__)
     return (
       <div style={styles.container}>
         <NavHeader activeKey={'research'}/>
 
-        <Fade>
+        <Fade bottom cascade>
           <Jumbotron style={{...__COMPONENT_STYLES__.jumbotron, ...styles.jumbotron}}> 
             <BackgroundImage 
               pan={'pan8'}    
               contentStyle={{...__COMPONENT_STYLES__.jumboContent, ...styles.jumboContent}}>
 
-              <Fade bottom cascade>
-                <div 
-                  style={{
-                    flex: 1, 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                  }}>
-                  <div style={{paddingTop: '20vh', marginBottom: 20}}>
-                    <p style={styles.bigTitle}>
-                      {"RESEARCH".toUpperCase()}
-                    </p>
-                    <HBar size={4} color={White(0.7)} />
-                  </div>
+              <div 
+                style={{
+                  flex: 1, 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                }}>
+                <div style={{paddingTop: '20vh', marginBottom: 20}}>
+                  <p style={styles.bigTitle}>
+                    {"RESEARCH".toUpperCase()}
+                  </p>
+                  <HBar size={4} color={White(0.7)} />
                 </div>
+              </div>
 
-                <div 
-                  style={styles.center}>
-                  <NextSectionCue
-                    config="whitedown"
-                    href="#ecology"
-                    />
-                  
-                </div>
-                <br/>
-                <br/>
-              </Fade>
+              <div 
+                style={styles.center}>
+                <NextSectionCue
+                  config="whitedown"
+                  href="#ecology"
+                  />
+                
+              </div>
+              <br/>
+              <br/>
             </BackgroundImage>
           </Jumbotron>
         </Fade>
@@ -148,7 +143,7 @@ export default class ResearchPage extends Component {
                   alignItems: 'flex-start',
                   display: 'flex',
                 }}>
-                <CodChart minHeight={'55vh'}/>
+                <FishSimChart data={__COD_SERIES__} />
               </div>
               <br/>
               <br/>
@@ -174,7 +169,7 @@ export default class ResearchPage extends Component {
           <br/>
           <br/>
 
-          <Grid>  
+          <Grid style={{ width: '100%'}}>  
             <Row>
               <Col sm={6} md={6} style={styles.col}>
                 <div
@@ -187,12 +182,12 @@ export default class ResearchPage extends Component {
                     alignItems: 'flex-start',
                     display: 'flex',
                   }}>
-                  <CodChart 
+                  <FishSimChart 
                     data={seriesSlice(__COD_SERIES__, 1960, 1998)}
                     keys={['abundance', 'recruits']}/>
                 </div>
               </Col>
-              <Col sm={6} md={6} style={{...styles.col, ...{paddingRight: '10vw'}}}>
+              <Col sm={6} md={6} style={{...styles.col, ...{paddingRight: '10vw',}}}>
                 <HBar color={lightGreen(1)} sizse={4} />
                 <br/>
                 <h2 
@@ -214,7 +209,7 @@ export default class ResearchPage extends Component {
             </Row>
           </Grid>
 
-          <Grid>  
+          <Grid style={{ width: '100%'}}>  
             <Row>
               <Col sm={6} md={6} style={styles.col}>
                 <SlideReveal left>
@@ -228,7 +223,7 @@ export default class ResearchPage extends Component {
                       alignItems: 'flex-start',
                       display: 'flex',
                     }}>
-                    <CodChart 
+                    <FishSimChart 
                       data={seriesSlice(__COD_SERIES__, 1960, 2005)}
                       keys={['recruits', 'biomass']}/>
                   </div>
@@ -261,7 +256,7 @@ export default class ResearchPage extends Component {
             </Row>
           </Grid>
 
-          <Grid>  
+          <Grid style={{ width: '100%'}}>  
             <Row>
               <Col sm={6} md={6} style={styles.col}>
                 <SlideReveal left>
@@ -275,7 +270,7 @@ export default class ResearchPage extends Component {
                       alignItems: 'flex-start',
                       display: 'flex',
                     }}>
-                    <CodChart 
+                    <FishSimChart 
                       data={seriesSlice(__COD_SERIES__, 1960, 2005)}
                       keys={['recruits', 'biomass', 'landings']}/>
                   </div>

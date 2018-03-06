@@ -78,6 +78,13 @@ export default class FishSimChart extends Component {
                   fillOpacity={1}
                   fill={lightRed(1)} />
     }
+    this.id = "fishchart" + String(Math.round(Math.random() * 100000))
+  }
+
+  componentDidMount() {
+    // console.log(this.id)
+    // var height = document.getElementById(this.id).clientHeight
+    // console.log("DIMENSIONS", height)
   }
 
   render() {
@@ -87,77 +94,75 @@ export default class FishSimChart extends Component {
     }
 
     return (
+      <ResponsiveContainer
+        minWidth={'100%'}
+        minHeight={this.props.minHeight}
+        debounce={1}
+        width={"100%"}>
+        <ComposedChart 
+          data={this.props.data} 
+          syncId={this.props.syncId}
+          margin={{
+            top: 10, 
+            right: -20, 
+            left: -75, 
+            bottom: 10
+          }}>
+          <XAxis 
+            stroke={White(0.8)}
+            dataKey="year"
+            strokeWidth={2}
+          />
+          <YAxis 
+            yAxisId="left"
+            stroke={White(0.8)}
+            strokeWidth={2}
+          />
 
-        <ResponsiveContainer 
-          minWidth={'100%'}
-          minHeight={this.props.minHeight}
-          debounce={1}
-          style={{margin: 0, padding: 0}}
-          width="100%">
-          <ComposedChart 
-            data={this.props.data} 
-            syncId={this.props.syncId}
-                margin={{
-                  top: 10, 
-                  right: 30, 
-                  left: 0, 
-                  bottom: 0
-                }}>
-            <XAxis 
-              stroke={White(0.8)}
-              dataKey="year"
-              strokeWidth={2}
-            />
-            <YAxis 
-              yAxisId="left"
-              stroke={White(0.8)}
-              strokeWidth={2}
-            />
+          <YAxis 
+            orientation="right"
+            yAxisId="right"
+            stroke={lightRed(1)}
+            strokeWidth={2}
+          />
 
-            <YAxis 
-              orientation="right"
-              yAxisId="right"
-              stroke={lightRed(1)}
-              strokeWidth={2}
-            />
+          { sources }
 
-            { sources }
+          <YAxis 
+            stroke={White(0.8)}
+            strokeWidth={2}
+          />
+          <CartesianGrid 
+            stroke={White(1)}
+            strokeDasharray="3 3"
+            strokeWidth={1}
+          />
+          <Tooltip
+            stroke={White(1)}
+            wrapperStyle={{ 
+              alignItems: 'flex-start',
+              textAlign: 'start',
+              backgroundColor: White(0.1)
+            }}
+          />
 
-            <YAxis 
-              stroke={White(0.8)}
-              strokeWidth={2}
-            />
-            <CartesianGrid 
-              stroke={White(1)}
-              strokeDasharray="3 3"
-              strokeWidth={1}
-            />
-            <Tooltip
-              stroke={White(1)}
-              wrapperStyle={{ 
-                alignItems: 'flex-start',
-                textAlign: 'start',
-                backgroundColor: White(0.1)
-              }}
-            />
+          <Legend 
+            stroke={White(1)}
+            iconSize={20}
+            style={{ color: White(1) }}
+            margin={{bottom: 30}}
+            verticalAlign="top" 
+            height={36}/>
+          <Brush 
+            height={28}
+            style={{margin: 10}}
+            stroke={White(1)}
+            fill={White(0.5)} />
 
-            <Legend 
-              stroke={White(1)}
-              iconSize={20}
-              style={{ color: White(1) }}
-              margin={{bottom: 30}}
-              verticalAlign="top" 
-              height={36}/>
-            <Brush 
-              height={28}
-              style={{margin: 10}}
-              stroke={White(1)}
-              fill={White(0.5)} />
-
-            <Brush />
-            />
-          </ComposedChart>
-        </ResponsiveContainer>
+          <Brush />
+          />
+        </ComposedChart>
+      </ResponsiveContainer>
     )
   }
 }
@@ -167,4 +172,14 @@ FishSimChart.defaultProps = {
   keys: ['abundance', 'biomass', 'recruits', 'landings'],
   data: __COD_SERIES__,
   minHeight: '50vh'
+}
+
+const styles = {
+  container: {
+    backgroundColor: 'green',
+    flex: 1,
+    display: 'flex',
+    height: '100%',
+    width: '100%'
+  }
 }
