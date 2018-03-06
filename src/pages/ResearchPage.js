@@ -244,9 +244,9 @@ export default class ResearchPage extends Component {
                   <p style={styles.p}>
                     The observed delay is easily explained by the impacts to spawning stock. 
                     In a healthy fishery, spawning stock levels should reach an asymptote as a function of various environmental factors. 
-                    Reasonable harvesting levels will not substantially affect the spawning stock, and as long as the spawning stock maintains a given level, a fishery can recover. 
+                    Reasonable harvesting levels will not substantially affect the spawning stock, and as long as the spawning stock stays within an acceptable range, a fishery can recover. 
                     However, when the spawning stock reaches critical levels, it enters into a terminal decline. 
-                    Subsequent generations of fish simply lack the density and age distribution to be able to reproduce effectively. 
+                    Subsequent generations simply lack the density and age distribution to be able to reproduce effectively. 
 
                   </p>
                 </SlideReveal>
