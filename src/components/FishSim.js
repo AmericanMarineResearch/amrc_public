@@ -83,7 +83,7 @@ function dataGen(maturity, recruitment) {
   var landings = 100
 
   for (var i = 0; i < 45; i++) {
-    var recruitmentFactor = 1 - (recruitment) + __OFFSET__ / (maturity)
+    var recruitmentFactor = (1 - (recruitment)  ) +  (__OFFSET__ / (maturity)) * (1 - (recruitment)  )
 
     if (i > __OFFSET__) {
       recruits = recruits * (recruitmentFactor )
