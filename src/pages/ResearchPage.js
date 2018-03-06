@@ -294,7 +294,7 @@ export default class ResearchPage extends Component {
                   <br/>
                   <p style={{...styles.p, ...{color: lightRed(1)}}}>
                     In Newfoundland, this resulted in the single largest layoff in Canadian history, whereby 40,000 fishermen lost their jobs in the span of one week. 
-                    The moratorium--originally planned for 2 years--placed on what was once one of the world's great fisheries has been in place for over 14 years.
+                    The moratorium--originally planned for 2 years--placed on what was once one of the world's great fisheries has been in effect for over 14 years, with no end in sight.
                   </p>
                 </SlideReveal>
 
