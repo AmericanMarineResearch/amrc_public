@@ -113,7 +113,6 @@ export default class NavFooter extends Component {
           </Col>
           <Col sm={6} md={6} style={{...styles.col, ...styles.right}}>
             <img style={styles.logo} src="/images/amrc_secondary-01.png"/>
-            <p style={styles.rightText}>{dummySentences.slice(0, 3).join(' ')}</p>
           </Col>
         </Row>
       </Grid>
@@ -129,8 +128,8 @@ const styles = {
     width: '100vw',
     paddingTop: '3em',
     paddingBottom: '3em',
-    paddingLeft: '5em',
-    paddingRight: '5em',
+    paddingLeft: '5vw',
+    paddingRight: '5vw',
   },
   col: {
     paddingTop: '1em',
