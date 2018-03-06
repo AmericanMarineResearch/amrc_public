@@ -1,17 +1,17 @@
 [
   {
     "name": "Gulfarium Marine Adventure Park",
-    "image": "https://cdn0.locable.com/uploads/resource/file/61275/Gulfarium-CMYK-Grdnt-Logo.jpg",
+    "image": "/images/external/gulfarium.jpg",
     "description": ""
   },
   {
     "name": "Great Southern Restaurant Group",
-    "image": "https://greatsouthernrestaurants.com/wp-content/themes/gsrestaurants/img/gsr-logo.png",
+    "image": "/images/external/fishhouse.jpg",
     "description": ""
   },
   {
     "name": "Coastwatch Alliance",
-    "image": "https://www.flseagrant.org/wp-content/uploads/CWA-logo.png",
+    "image": "/images/external/cwa modern.jpg",
     "description": ""
   }
 ]
