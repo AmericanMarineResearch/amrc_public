@@ -6948,3 +6948,7 @@ label {
   border-color: #dddddd;
 }
 
+
+.recharts-legend-item-text {
+  color: rgba(255,255,255,0.8);
+}

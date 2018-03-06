@@ -196,7 +196,10 @@ export default class AboutPage extends Component {
             display: 'flex',
             flexDirection: "column"
           }}>
-         <h2 style={{...styles.subtitle, ...{color: darkBlue(1)} }}>
+        <br/>
+        <br/>
+        <br/>
+        <h2 style={{...styles.subtitle, ...{color: darkBlue(1)} }}>
             ADVISORS
           </h2>
           <div style={{...styles.hcap, ...{backgroundColor: darkBlue(1)} }}/>
@@ -311,9 +314,11 @@ class AdvisorCard extends Component {
         }}>
 
         <div style={{...styles.hcap, ...{backgroundColor: lightGreen(1)}}}/>
+        <br/>
         <h3 style={advisorCardStyles.name}>
           {this.props.name}
         </h3>
+        <br/>
         <h4 style={advisorCardStyles.position}>
           {this.props.title}
         </h4>
@@ -440,9 +445,11 @@ class TeamMemberCard extends Component {
         key={'name'}
         style={{...teamCardStyles.col2, ...teamCardStyles.column}}>
         <div style={teamCardStyles.blueCap} />
+        <br/>
         <h3 style={teamCardStyles.name}>
           {this.props.name}
         </h3>
+        <br/>
         <h4 style={teamCardStyles.position}>
           {this.props.title}
         </h4>

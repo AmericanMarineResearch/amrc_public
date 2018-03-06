@@ -122,7 +122,7 @@ export default class FishSim extends Component {
     super(props)
     this.state = {
       maturity: 10,
-      recruitment: .5
+      recruitment: 50
     }
   }
   render() {
@@ -155,17 +155,26 @@ export default class FishSim extends Component {
                   For Vermillion Snapper, peak sexual maturity is not reached until the 10th year. 
                 </p>
                 <br/>
+                <p style={{...styles.p, ...{textAlign: 'end'}}}>
+                  Usage: Select properties of your native species and of your invasive species, then scroll down to see simulated population dynamics models.
+                </p>
+                <br/>
 
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightBlue(1)}}}>
                   {"Known Inputs: Time to Maturity".toUpperCase()}
                 </h5>
                 <HBar color={lightBlue(1)} size={4} />
                 <br/>
+                <h1 style={{...styles.h1, ...{textAlign: 'end', color: lightBlue(1)}}}>
+                  {this.state.maturity + ' YEARS'}
+                </h1>
+                <br/>
+
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightBlue(1)}}}>
-                  {"Vermillion Snapper: 8".toUpperCase()}
+                  {"Vermillion Snapper: 8 years".toUpperCase()}
                 </h5>
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightBlue(1)}}}>
-                  {"Goliath Grouper: 14".toUpperCase()}
+                  {"Goliath Grouper: 14 years".toUpperCase()}
                 </h5>
 
                 <br/>
@@ -177,11 +186,17 @@ export default class FishSim extends Component {
                 <HBar color={lightGreen(1)} size={4} />
                 <br/>
 
+
+                <h1 style={{...styles.h1, ...{textAlign: 'end', color: lightGreen(1)}}}>
+                  {this.state.recruitment + '%'}
+                </h1>
+                <br/>
+
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightGreen(1)}}}>
-                  {"Studied Average: 0.90".toUpperCase()}
+                  {"Studied Average: 90%".toUpperCase()}
                 </h5>
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightGreen(1)}}}>
-                  {"Protected Reefs: 0.30".toUpperCase()}
+                  {"Protected Reefs: 30%".toUpperCase()}
                 </h5>
 
 
@@ -229,9 +244,9 @@ export default class FishSim extends Component {
                   <br/>
 
                   <Slider 
-                    min={0.0}
-                    max={1.0}
-                    stepSize={0.01}
+                    min={0}
+                    max={100}
+                    stepSize={1}
                     onChange={(recruitment) => this.setState({recruitment})}
                     value={this.state.recruitment}
                     vertical={false} />
@@ -261,7 +276,7 @@ export default class FishSim extends Component {
 
           <FishSimChart 
             minHeight="60vh"
-            data={dataGen(this.state.maturity, this.state.recruitment)}
+            data={dataGen(this.state.maturity, this.state.recruitment / 100.0)}
             keys={['recruits', 'biomass', 'landings', 'abundance']}/>
         </div>
       </div>
