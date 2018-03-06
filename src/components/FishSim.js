@@ -346,6 +346,7 @@ const styles = {
     letterSpacing: '2px',
     fontWeight: 600,
     marginBottom: 0,
+    lineHeight: '110%',
   },
   line: {
     margin: 0

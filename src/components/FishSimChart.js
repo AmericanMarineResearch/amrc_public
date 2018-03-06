@@ -103,7 +103,7 @@ export default class FishSimChart extends Component {
           data={this.props.data} 
           syncId={this.props.syncId}
           margin={{
-            top: 10, 
+            top: 0, 
             right: -20, 
             left: -75, 
             bottom: 10

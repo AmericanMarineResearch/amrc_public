@@ -415,7 +415,8 @@ const styles = {
     letterSpacing: '2px',
     fontSize: 40,
     fontWeight: 600,
-    textAlign: 'start'
+    textAlign: 'start',
+    lineHeight: '110%',
   },
   h2: {
     color: White(1),
@@ -470,6 +471,7 @@ const styles = {
     fontSize: 30,
     color: lightGreen(1),
     letterSpacing: '2px',
+    lineHeight: '110%',
     fontWeight: 600,
     marginBottom: 0,
   },
