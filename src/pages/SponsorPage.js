@@ -109,7 +109,7 @@ export default class SponsorPage extends Component {
                     paddingLeft: 8,
                     paddingRight: '20vw',
                   }}>
-                  <div style={{paddingTop: '30vh', marginBottom: 20}}>
+                  <div style={{paddingTop: '20vh', marginBottom: 20}}>
                     <p style={styles.bigTitle}>
                       {"Thank You".toUpperCase()}
                     </p>
