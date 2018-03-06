@@ -41,9 +41,11 @@ class SponsorCard extends Component {
         <div style={sponsorCardStyles.imageContainer}>
           <img src={this.props.image} style={sponsorCardStyles.image} />
         </div>
+        <br/>
         <h2 style={sponsorCardStyles.name}>
-          {this.props.name}
+          {this.props.name.toUpperCase()}
         </h2>
+
         <HBar size={4} color={lightBlue(1)}/>
 
       </div>
@@ -72,7 +74,9 @@ let sponsorCardStyles = {
   },
   name: {
     textAlign: 'start',
-    color: lightBlue(1)
+    color: lightBlue(1),
+    letterSpacing: '2px',
+    lineHeight: '110%',
   },
   image: {
     width: '100%',
@@ -146,6 +150,7 @@ export default class SponsorPage extends Component {
                 flexDirection: 'column' 
               }}}>
             <HBar size={4} color={lightGreen(1)} />
+            <br/>
             <h1 style={styles.title}>
               SPONSORS
             </h1>
