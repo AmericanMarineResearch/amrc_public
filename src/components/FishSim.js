@@ -152,7 +152,7 @@ export default class FishSim extends Component {
                 <p style={{...styles.p, ...{textAlign: 'end'}}}>
                   We present you now with a tool to visualize the delays to observable impact on landings. 
                   For Atlantic cod, a 2 to 3 year delay came of the time to peak sexual maturity. 
-                  For Vermillion Snapper, peak sexual maturity is not reached until the 10th year. 
+                  For Red Snapper, sexual maturity is not reached until the 2nd to 4th year, with peak maturity occurring much later, closer to the 8th year of life. 
                 </p>
                 <br/>
                 <p style={{...styles.p, ...{textAlign: 'end'}}}>
@@ -171,7 +171,7 @@ export default class FishSim extends Component {
                 <br/>
 
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightBlue(1)}}}>
-                  {"Vermillion Snapper: 8 years".toUpperCase()}
+                  {"Red Snapper: 2-4 years".toUpperCase()}
                 </h5>
                 <h5 style={{...styles.h5, ...{textAlign: 'end', color: lightBlue(1)}}}>
                   {"Goliath Grouper: 14 years".toUpperCase()}
