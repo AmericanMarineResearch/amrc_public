@@ -42,7 +42,7 @@ class Routes extends React.Component {
 
 
     return (
-      <Router {...this.props}>
+      <Router basename={process.env.PUBLIC_URL} {...this.props}>
         <Switch>
           <Route path="/404" component={NotFoundPage} />
           <Redirect exact from="/" to='/home' />
